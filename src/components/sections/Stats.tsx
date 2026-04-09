@@ -36,7 +36,7 @@ const STATS = [
 
 export function Stats() {
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden">
+    <section className="relative py-20 sm:py-28 overflow-hidden bg-vanilla-50/20">
       {/* Subtle dot pattern background */}
       <div
         aria-hidden="true"

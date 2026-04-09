@@ -67,7 +67,7 @@ export function CallToAction() {
             {/* Decorative gradient blob */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2"
+              className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3"
             >
               <div className="h-[300px] w-[600px] rounded-full bg-primary-foreground/10 blur-3xl" />
             </div>

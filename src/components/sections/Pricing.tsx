@@ -45,7 +45,7 @@ const TIERS: PricingTier[] = [
       "Birthday calendar dashboard",
     ],
     cta: "Get Started",
-    href: "#",
+    href: "#pricing",
   },
   {
     name: "Business",
@@ -63,7 +63,7 @@ const TIERS: PricingTier[] = [
       "Custom delivery scheduling",
     ],
     cta: "Start Free Trial",
-    href: "#",
+    href: "#pricing",
     popular: true,
   },
   {
@@ -81,7 +81,7 @@ const TIERS: PricingTier[] = [
       "SLA guarantee",
     ],
     cta: "Contact Sales",
-    href: "#",
+    href: "#contact",
   },
 ];
 
@@ -130,7 +130,7 @@ function PricingToggle({
       {isAnnual && (
         <Badge
           variant="secondary"
-          className="bg-green-100 text-green-700 text-xs"
+          className="bg-teal-100 text-teal-600 text-xs"
         >
           Save 20%
         </Badge>
@@ -155,7 +155,7 @@ function PricingCard({
         "relative flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-xl",
         tier.popular
           ? "scale-105 border-coral-500 bg-coral-50/30 shadow-lg shadow-coral-500/10 ring-2 ring-coral-500"
-          : ""
+          : "hover:border-teal-300"
       )}
     >
       {tier.popular && (
@@ -196,7 +196,7 @@ function PricingCard({
           <motion.p
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            className="text-xs text-green-600 font-medium -mt-4"
+            className="text-xs text-teal-600 font-medium -mt-4"
           >
             Billed annually — save 20%
           </motion.p>
@@ -239,7 +239,7 @@ export function Pricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
               Simple, transparent pricing
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
