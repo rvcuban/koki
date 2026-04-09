@@ -25,22 +25,22 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 function EmployeeTableMockup() {
   const rows = [
-    { initials: "SM", name: "Sarah Mitchell", birthday: "Mar 15", color: "bg-coral-400" },
-    { initials: "JC", name: "James Chen", birthday: "Apr 02", color: "bg-teal-400" },
-    { initials: "LP", name: "Luna Park", birthday: "May 21", color: "bg-vanilla-600" },
+    { initials: "SM", name: "Sarah Mitchell", birthday: "Mar 15", color: "bg-coral-400", status: "Active", statusColor: "bg-teal-100 text-teal-700" },
+    { initials: "JC", name: "James Chen", birthday: "Apr 02", color: "bg-teal-400", status: "Active", statusColor: "bg-teal-100 text-teal-700" },
+    { initials: "LP", name: "Luna Park", birthday: "May 21", color: "bg-vanilla-600", status: "Upcoming", statusColor: "bg-vanilla-100 text-vanilla-800" },
   ];
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border/50 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-xl border border-border/50 bg-vanilla-50/50 shadow-sm">
       {/* Table header */}
-      <div className="grid grid-cols-3 gap-2 border-b border-border/40 bg-muted/30 px-3 py-2">
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+      <div className="grid grid-cols-3 gap-2 border-b border-border/40 bg-teal-50/60 px-3 py-2">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
           Employee
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
           Birthday
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
           Status
         </span>
       </div>
@@ -50,7 +50,7 @@ function EmployeeTableMockup() {
           key={row.name}
           className={cn(
             "grid grid-cols-3 items-center gap-2 px-3 py-2",
-            i % 2 === 1 && "bg-muted/20"
+            i % 2 === 1 && "bg-vanilla-50/30"
           )}
         >
           <div className="flex items-center gap-2">
@@ -66,9 +66,9 @@ function EmployeeTableMockup() {
               {row.name}
             </span>
           </div>
-          <span className="text-xs text-muted-foreground">{row.birthday}</span>
-          <span className="inline-flex w-fit items-center rounded-full bg-teal-100 px-2 py-0.5 text-[10px] font-medium text-teal-700">
-            Active
+          <span className="text-xs text-teal-700/70">{row.birthday}</span>
+          <span className={cn("inline-flex w-fit items-center rounded-full px-2 py-0.5 text-[10px] font-medium", row.statusColor)}>
+            {row.status}
           </span>
         </div>
       ))}
@@ -78,7 +78,7 @@ function EmployeeTableMockup() {
 
 function RulesEngineMockup() {
   return (
-    <div className="overflow-hidden rounded-xl border border-border/50 bg-white p-3 shadow-sm">
+    <div className="overflow-hidden rounded-xl border border-border/50 bg-vanilla-50/40 p-3 shadow-sm">
       {/* Toggle rows */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
@@ -95,22 +95,22 @@ function RulesEngineMockup() {
             Work anniversaries
           </span>
           {/* Toggle OFF */}
-          <div className="flex h-5 w-9 items-center rounded-full bg-muted px-0.5">
+          <div className="flex h-5 w-9 items-center rounded-full bg-warm-200 px-0.5">
             <div className="size-4 rounded-full bg-white shadow-sm" />
           </div>
         </div>
       </div>
 
       {/* Dropdown */}
-      <div className="mt-3 rounded-lg border border-border/50 bg-muted/20 px-3 py-1.5">
+      <div className="mt-3 rounded-lg border border-teal-200/50 bg-teal-50/30 px-3 py-1.5">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] text-muted-foreground">Default cake</span>
+          <span className="text-[11px] text-teal-600">Default cake</span>
           <div className="flex items-center gap-1">
             <span className="text-xs font-medium text-foreground">
               Chocolate Cake
             </span>
             <svg
-              className="size-3 text-muted-foreground"
+              className="size-3 text-teal-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -128,7 +128,7 @@ function RulesEngineMockup() {
 
       {/* Status badge */}
       <div className="mt-3 flex items-center gap-1.5">
-        <div className="size-2 rounded-full bg-teal-500" />
+        <div className="size-2 rounded-full bg-teal-500 animate-pulse" />
         <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
           Active
         </span>
@@ -142,28 +142,39 @@ function OrderDashboardMockup() {
     {
       status: "bg-teal-500",
       label: "Delivered",
+      labelColor: "text-teal-600",
       name: "Sarah M.",
       date: "Mar 15",
     },
     {
       status: "bg-vanilla-500",
       label: "In transit",
+      labelColor: "text-vanilla-700",
       name: "James C.",
       date: "Apr 02",
     },
     {
       status: "bg-warm-300",
       label: "Scheduled",
+      labelColor: "text-warm-500",
       name: "Luna P.",
       date: "May 21",
     },
   ];
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border/50 bg-white p-3 shadow-sm">
-      <div className="space-y-3">
+    <div className="overflow-hidden rounded-xl border border-border/50 bg-teal-50/30 p-3 shadow-sm">
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
+          Recent orders
+        </span>
+        <span className="rounded-full bg-vanilla-100 px-2 py-0.5 text-[9px] font-medium text-vanilla-800">
+          3 total
+        </span>
+      </div>
+      <div className="space-y-2.5">
         {orders.map((order) => (
-          <div key={order.name} className="flex items-center gap-3">
+          <div key={order.name} className="flex items-center gap-3 rounded-lg bg-white/60 px-2.5 py-1.5">
             {/* Status dot */}
             <div className={cn("size-2.5 shrink-0 rounded-full", order.status)} />
             {/* Info */}
@@ -172,11 +183,11 @@ function OrderDashboardMockup() {
                 <span className="text-xs font-medium text-foreground">
                   {order.name}
                 </span>
-                <span className="text-[10px] text-muted-foreground">
+                <span className="text-[10px] text-teal-500/70">
                   {order.date}
                 </span>
               </div>
-              <span className="text-[10px] text-muted-foreground">
+              <span className={cn("text-[10px]", order.labelColor)}>
                 {order.label}
               </span>
             </div>
@@ -191,7 +202,7 @@ function NotificationsMockup() {
   return (
     <div className="space-y-2">
       {/* Email preview */}
-      <div className="overflow-hidden rounded-xl border border-border/50 bg-white p-3 shadow-sm">
+      <div className="overflow-hidden rounded-xl border border-coral-200/50 bg-coral-50/30 p-3 shadow-sm">
         <div className="flex items-start gap-2">
           <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-coral-100 text-sm">
             🎂
@@ -200,26 +211,26 @@ function NotificationsMockup() {
             <p className="text-[11px] font-semibold text-foreground">
               Birthday Reminder
             </p>
-            <p className="mt-0.5 truncate text-[10px] text-muted-foreground">
+            <p className="mt-0.5 truncate text-[10px] text-teal-600/80">
               Sarah&apos;s birthday is in 3 days
             </p>
           </div>
-          <span className="shrink-0 text-[9px] text-muted-foreground/60">
+          <span className="shrink-0 text-[9px] text-coral-400">
             2m ago
           </span>
         </div>
       </div>
       {/* Push notification */}
-      <div className="overflow-hidden rounded-xl border border-border/50 bg-white p-3 shadow-sm">
+      <div className="overflow-hidden rounded-xl border border-teal-200/50 bg-teal-50/30 p-3 shadow-sm">
         <div className="flex items-start gap-2">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-sm">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-vanilla-100 text-sm">
             🔔
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-[11px] font-semibold text-foreground">
               Cake ordered!
             </p>
-            <p className="mt-0.5 truncate text-[10px] text-muted-foreground">
+            <p className="mt-0.5 truncate text-[10px] text-teal-600/80">
               Chocolate cake for James — delivery Apr 2
             </p>
           </div>
