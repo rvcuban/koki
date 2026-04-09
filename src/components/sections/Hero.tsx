@@ -22,8 +22,8 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-br from-primary/10 via-primary/5 to-transparent blur-3xl" />
-        <div className="absolute -bottom-1/4 right-0 h-[600px] w-[600px] rounded-full bg-gradient-to-tl from-primary/8 via-transparent to-transparent blur-3xl" />
+        <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-br from-coral-200/30 via-coral-100/10 to-transparent blur-3xl" />
+        <div className="absolute -bottom-1/4 right-0 h-[600px] w-[600px] rounded-full bg-gradient-to-tl from-teal-200/20 via-transparent to-transparent blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-4xl text-center">
@@ -37,9 +37,9 @@ export function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-foreground [animation-delay:100ms] sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="animate-fade-in-up font-heading text-4xl font-bold tracking-tight text-foreground [animation-delay:100ms] sm:text-5xl md:text-6xl lg:text-7xl">
           Make Every Birthday{" "}
-          <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-coral-500 via-coral-400 to-coral-300 bg-clip-text text-transparent">
             Unforgettable
           </span>
         </h1>
@@ -83,7 +83,7 @@ export function Hero() {
         <div className="relative overflow-hidden rounded-xl border border-border/40 bg-gradient-to-br from-muted/80 via-muted/40 to-background shadow-2xl">
           <div className="flex aspect-[16/9] items-center justify-center">
             <div className="text-center">
-              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl bg-primary/10">
+              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl bg-coral-100">
                 <span className="text-3xl" role="img" aria-label="Birthday cake">
                   🎂
                 </span>

@@ -58,7 +58,7 @@ export function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="text-2xl font-bold tracking-tight text-foreground"
+          className="font-heading text-2xl font-bold tracking-tight text-foreground"
         >
           Koki
         </a>
@@ -101,7 +101,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <SheetHeader>
-                <SheetTitle className="text-left text-xl font-bold">
+                <SheetTitle className="text-left font-heading text-xl font-bold">
                   Koki
                 </SheetTitle>
               </SheetHeader>
