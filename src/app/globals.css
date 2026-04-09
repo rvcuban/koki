@@ -4,12 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* =============================================
+   Koki Design System — Tailwind CSS v4 Theme
+   ============================================= */
+
 @theme inline {
+  /* --- Base Shadcn semantic tokens --- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,76 +51,192 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* --- Koki Brand Colors (direct palette access) --- */
+
+  /* Coral / Primary */
+  --color-coral-50: oklch(0.970 0.030 42.0);
+  --color-coral-100: oklch(0.940 0.060 43.0);
+  --color-coral-200: oklch(0.880 0.090 45.0);
+  --color-coral-300: oklch(0.824 0.107 47.6);
+  --color-coral-400: oklch(0.762 0.150 43.6);
+  --color-coral-500: oklch(0.705 0.193 39.2);
+  --color-coral-600: oklch(0.642 0.184 39.3);
+  --color-coral-700: oklch(0.581 0.175 38.7);
+  --color-coral-800: oklch(0.480 0.145 38.0);
+  --color-coral-900: oklch(0.380 0.110 37.0);
+
+  /* Teal / Secondary */
+  --color-teal-50: oklch(0.960 0.015 210.0);
+  --color-teal-100: oklch(0.910 0.030 209.0);
+  --color-teal-200: oklch(0.810 0.050 208.0);
+  --color-teal-300: oklch(0.589 0.077 206.7);
+  --color-teal-400: oklch(0.500 0.068 208.7);
+  --color-teal-500: oklch(0.410 0.059 209.8);
+  --color-teal-600: oklch(0.345 0.050 211.3);
+  --color-teal-700: oklch(0.275 0.040 211.1);
+  --color-teal-800: oklch(0.220 0.032 211.0);
+  --color-teal-900: oklch(0.170 0.025 210.0);
+
+  /* Vanilla / Accent */
+  --color-vanilla-50: oklch(0.985 0.030 99.0);
+  --color-vanilla-100: oklch(0.970 0.055 99.0);
+  --color-vanilla-200: oklch(0.958 0.086 99.2);
+  --color-vanilla-300: oklch(0.940 0.122 99.2);
+  --color-vanilla-400: oklch(0.922 0.143 97.8);
+  --color-vanilla-500: oklch(0.870 0.151 97.2);
+  --color-vanilla-600: oklch(0.800 0.140 96.0);
+  --color-vanilla-700: oklch(0.720 0.120 95.0);
+  --color-vanilla-800: oklch(0.620 0.100 94.0);
+  --color-vanilla-900: oklch(0.520 0.080 93.0);
+
+  /* Warm Grays */
+  --color-warm-50: oklch(0.980 0.005 78.3);
+  --color-warm-100: oklch(0.944 0.010 81.8);
+  --color-warm-200: oklch(0.885 0.018 78.2);
+  --color-warm-300: oklch(0.788 0.026 75.2);
+  --color-warm-400: oklch(0.653 0.025 71.6);
+  --color-warm-500: oklch(0.499 0.019 64.4);
+  --color-warm-600: oklch(0.384 0.018 70.5);
+  --color-warm-700: oklch(0.289 0.023 66.7);
+  --color-warm-800: oklch(0.232 0.018 70.5);
+  --color-warm-900: oklch(0.197 0.015 66.8);
 }
+
+/* =============================================
+   Light Theme (default)
+   ============================================= */
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Backgrounds — warm cream base */
+  --background: oklch(0.980 0.005 78.3);
+  --foreground: oklch(0.232 0.018 70.5);
+
+  /* Card */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.232 0.018 70.5);
+
+  /* Popover */
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.232 0.018 70.5);
+
+  /* Primary — Coral */
+  --primary: oklch(0.705 0.193 39.2);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary — Teal */
+  --secondary: oklch(0.410 0.059 209.8);
+  --secondary-foreground: oklch(1 0 0);
+
+  /* Muted */
+  --muted: oklch(0.944 0.010 81.8);
+  --muted-foreground: oklch(0.499 0.019 64.4);
+
+  /* Accent — Vanilla */
+  --accent: oklch(0.958 0.086 99.2);
+  --accent-foreground: oklch(0.289 0.023 66.7);
+
+  /* Destructive */
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Borders & inputs */
+  --border: oklch(0.885 0.018 78.2);
+  --input: oklch(0.885 0.018 78.2);
+  --ring: oklch(0.705 0.193 39.2);
+
+  /* Charts — Koki branded */
+  --chart-1: oklch(0.705 0.193 39.2);
+  --chart-2: oklch(0.410 0.059 209.8);
+  --chart-3: oklch(0.922 0.143 97.8);
+  --chart-4: oklch(0.589 0.077 206.7);
+  --chart-5: oklch(0.762 0.150 43.6);
+
+  /* Radius — slightly rounder for playful feel */
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar: oklch(0.980 0.005 78.3);
+  --sidebar-foreground: oklch(0.232 0.018 70.5);
+  --sidebar-primary: oklch(0.705 0.193 39.2);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.958 0.086 99.2);
+  --sidebar-accent-foreground: oklch(0.289 0.023 66.7);
+  --sidebar-border: oklch(0.885 0.018 78.2);
+  --sidebar-ring: oklch(0.705 0.193 39.2);
+
+  /* Koki brand tokens */
+  --koki-gradient-start: oklch(0.705 0.193 39.2);
+  --koki-gradient-end: oklch(0.762 0.150 43.6);
+  --koki-hero-bg: oklch(0.980 0.005 78.3);
 }
 
+/* =============================================
+   Dark Theme
+   ============================================= */
+
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  /* Backgrounds */
+  --background: oklch(0.197 0.015 66.8);
+  --foreground: oklch(0.944 0.010 81.8);
+
+  /* Card */
+  --card: oklch(0.232 0.018 70.5);
+  --card-foreground: oklch(0.944 0.010 81.8);
+
+  /* Popover */
+  --popover: oklch(0.232 0.018 70.5);
+  --popover-foreground: oklch(0.944 0.010 81.8);
+
+  /* Primary — Coral (brighter in dark) */
+  --primary: oklch(0.762 0.150 43.6);
+  --primary-foreground: oklch(0.197 0.015 66.8);
+
+  /* Secondary — Teal (brighter in dark) */
+  --secondary: oklch(0.589 0.077 206.7);
+  --secondary-foreground: oklch(0.197 0.015 66.8);
+
+  /* Muted */
+  --muted: oklch(0.289 0.023 66.7);
+  --muted-foreground: oklch(0.653 0.025 71.6);
+
+  /* Accent — Vanilla (toned down in dark) */
+  --accent: oklch(0.384 0.018 70.5);
+  --accent-foreground: oklch(0.940 0.122 99.2);
+
+  /* Destructive */
   --destructive: oklch(0.704 0.191 22.216);
+
+  /* Borders & inputs */
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.762 0.150 43.6);
+
+  /* Charts */
+  --chart-1: oklch(0.762 0.150 43.6);
+  --chart-2: oklch(0.589 0.077 206.7);
+  --chart-3: oklch(0.940 0.122 99.2);
+  --chart-4: oklch(0.500 0.068 208.7);
+  --chart-5: oklch(0.824 0.107 47.6);
+
+  /* Sidebar */
+  --sidebar: oklch(0.232 0.018 70.5);
+  --sidebar-foreground: oklch(0.944 0.010 81.8);
+  --sidebar-primary: oklch(0.762 0.150 43.6);
+  --sidebar-primary-foreground: oklch(0.197 0.015 66.8);
+  --sidebar-accent: oklch(0.384 0.018 70.5);
+  --sidebar-accent-foreground: oklch(0.940 0.122 99.2);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-ring: oklch(0.762 0.150 43.6);
+
+  /* Koki brand tokens */
+  --koki-gradient-start: oklch(0.762 0.150 43.6);
+  --koki-gradient-end: oklch(0.824 0.107 47.6);
+  --koki-hero-bg: oklch(0.197 0.015 66.8);
 }
+
+/* =============================================
+   Base Layer
+   ============================================= */
 
 @layer base {
   * {
@@ -125,15 +246,83 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply scroll-smooth font-sans;
+    @apply font-sans scroll-smooth;
+  }
+
+  /* Heading styles using Playfair Display */
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl tracking-tight;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl tracking-tight;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
   }
 }
 
+/* =============================================
+   Koki Utility Classes
+   ============================================= */
+
 @layer utilities {
+  /* Brand gradient */
+  .koki-gradient {
+    background: linear-gradient(135deg, var(--koki-gradient-start), var(--koki-gradient-end));
+  }
+
+  .koki-gradient-text {
+    background: linear-gradient(135deg, var(--koki-gradient-start), var(--koki-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section backgrounds */
+  .section-alt {
+    @apply bg-muted/50;
+  }
+
+  /* Warm shadow for cards */
+  .shadow-warm {
+    box-shadow:
+      0 1px 3px oklch(0.705 0.193 39.2 / 0.08),
+      0 4px 12px oklch(0.705 0.193 39.2 / 0.06);
+  }
+
+  .shadow-warm-lg {
+    box-shadow:
+      0 4px 8px oklch(0.705 0.193 39.2 / 0.10),
+      0 12px 32px oklch(0.705 0.193 39.2 / 0.08);
+  }
+
+  /* Container with sensible defaults */
+  .koki-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .koki-section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Animations (preserved from teammate) */
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out both;
   }
 }
+
+/* =============================================
+   Keyframe Animations
+   ============================================= */
 
 @keyframes fade-in-up {
   from {
