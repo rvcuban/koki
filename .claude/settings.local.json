@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/javierrodriguezverdecia/.claude/**)",
+      "Read(//Users/javierrodriguezverdecia/.engram/**)",
+      "Bash(pip list:*)",
+      "Read(//Users/javierrodriguezverdecia/.local/bin/**)",
+      "Read(//usr/local/bin/**)",
+      "Bash(engram get:*)",
+      "Bash(bat ~/.claude.json)",
+      "Bash(bat /Users/javierrodriguezverdecia/.claude.json)",
+      "Read(//Users/javierrodriguezverdecia/**)",
+      "Bash(tmux display-message:*)",
+      "WebFetch(domain:www.daymaker.com)",
+      "Bash(git -C /Users/javierrodriguezverdecia/repos/koki log --oneline)",
+      "Bash(git -C /Users/javierrodriguezverdecia/repos/koki status)",
+      "WebFetch(domain:app.daymaker.com)",
+      "WebSearch",
+      "WebFetch(domain:www.trydaymaker.com)",
+      "Bash(engram save:*)",
+      "Bash(eza -la --tree --level=2 --ignore-glob=\"node_modules|.git|.next\")"
+    ]
+  }
+}
