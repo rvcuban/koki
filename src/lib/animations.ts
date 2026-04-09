@@ -1,45 +1,47 @@
+import type { Variants } from "framer-motion"
+
 // Fade in from bottom
-export const fadeInUp = {
+export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 }
 
 // Fade in from left
-export const fadeInLeft = {
+export const fadeInLeft: Variants = {
   hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 }
 
 // Fade in from right
-export const fadeInRight = {
+export const fadeInRight: Variants = {
   hidden: { opacity: 0, x: 30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 }
 
 // Scale in
-export const scaleIn = {
+export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" as const },
   },
 }
 
 // Stagger children container
-export const staggerContainer = {
+export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.15, delayChildren: 0.1 },
@@ -50,6 +52,6 @@ export const staggerContainer = {
 export const float = {
   animate: {
     y: [-10, 10, -10],
-    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" as const },
   },
 }

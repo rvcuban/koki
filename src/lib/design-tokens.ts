@@ -5,44 +5,47 @@
  * Use CSS variables (via Tailwind classes) in components.
  * This file provides typed constants for programmatic use
  * (e.g., charts, dynamic styles, canvas rendering).
+ *
+ * HEX values derived from OKLCH source of truth in globals.css.
+ * If the CSS values change, regenerate these via OKLCH→sRGB conversion.
  */
 
 export const colors = {
   coral: {
-    50: "#FFF0EB",
-    100: "#FFDDD0",
-    200: "#FFB9A0",
+    50: "#FFEFE6",
+    100: "#FFDFCC",
+    200: "#FFC5A6",
     300: "#FFB088",
     400: "#FF8F5E",
     500: "#FF6B35",
     600: "#E55A25",
     700: "#CC4A18",
-    800: "#9E3810",
-    900: "#702808",
+    800: "#9E3712",
+    900: "#712710",
   },
   teal: {
-    50: "#EDF6F7",
-    100: "#D0EAED",
-    200: "#A0D4DA",
+    50: "#E7F5F7",
+    100: "#CBE7EC",
+    200: "#9CCBD2",
     300: "#3C8A94",
-    400: "#2B6E78",
-    500: "#1A535C",
-    600: "#124048",
+    400: "#2C6E78",
+    500: "#1B535C",
+    600: "#134048",
     700: "#0A2D33",
-    800: "#062226",
-    900: "#031619",
+    800: "#051F23",
+    900: "#021215",
   },
   vanilla: {
-    50: "#FFFDF0",
-    100: "#FFFAE0",
+    50: "#FFFBE4",
+    100: "#FEF7CC",
     200: "#FFF3B0",
     300: "#FFED8A",
     400: "#FFE66D",
     500: "#F0D44F",
-    600: "#D4B83A",
-    700: "#B09828",
-    800: "#8A7618",
-    900: "#645408",
+    600: "#D9BD44",
+    700: "#BCA341",
+    800: "#9A8538",
+    900: "#79682E",
   },
   warm: {
     50: "#FAF8F5",
@@ -66,16 +69,16 @@ export const fonts = {
 
 export const spacing = {
   section: {
-    sm: "4rem",      // py-16
-    md: "6rem",      // py-24
-    lg: "8rem",      // py-32
+    sm: "4rem", // py-16
+    md: "6rem", // py-24
+    lg: "8rem", // py-32
   },
   container: {
     maxWidth: "80rem", // max-w-7xl
     px: {
-      sm: "1rem",    // px-4
-      md: "1.5rem",  // px-6
-      lg: "2rem",    // px-8
+      sm: "1rem", // px-4
+      md: "1.5rem", // px-6
+      lg: "2rem", // px-8
     },
   },
 } as const;
