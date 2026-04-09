@@ -18,9 +18,7 @@ export default function Home() {
         <ClientLogos />
         <HowItWorks />
 
-        <section id="features" className="px-4 py-24">
-          {/* Features section — coming soon */}
-        </section>
+        <Features />
 
         <Testimonials />
         <Stats />
