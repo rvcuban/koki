@@ -19,33 +19,33 @@ import { cn } from "@/lib/utils";
 const FEATURES = [
   {
     icon: Users,
-    title: "Employee Management",
+    title: "Smart Employee Management",
     description:
-      "Import your team via CSV or connect your HRIS — Koki keeps every birthday up to date automatically.",
+      "Bulk upload employee data via CSV or sync directly with your HR system. We integrate with 80+ platforms including BambooHR, Gusto, and Workday.",
     accent: "bg-coral-100 text-coral-600",
     span: "md:col-span-2",
   },
   {
     icon: Settings2,
-    title: "Smart Rules Engine",
+    title: "Intelligent Rules Engine",
     description:
-      "Define celebration rules once: cake type, dietary preferences, budget per person. Koki handles the rest.",
+      "Set your celebration rules once and let Koki run forever. Configure per-team preferences, dietary restrictions, cake styles, and delivery windows.",
     accent: "bg-teal-100 text-teal-600",
     span: "",
   },
   {
     icon: LayoutDashboard,
-    title: "Order Dashboard",
+    title: "Real-time Order Dashboard",
     description:
-      "Track every delivery in real time. See what's scheduled, what's been delivered, and what's coming up.",
+      "Track every delivery in real time. See upcoming celebrations, manage orders, and get full visibility into your celebration pipeline.",
     accent: "bg-vanilla-200 text-vanilla-800",
     span: "",
   },
   {
     icon: Bell,
-    title: "Smart Notifications",
+    title: "Automated Notifications",
     description:
-      "Automated reminders for upcoming birthdays. Slack, email, or in-app — your team never misses a celebration.",
+      "Never miss a birthday again. Automatic reminders at 2 weeks, 1 week, and 1 day before — for managers, teams, and admins.",
     accent: "bg-teal-100 text-teal-600",
     span: "md:col-span-2",
   },
@@ -53,7 +53,7 @@ const FEATURES = [
     icon: PartyPopper,
     title: "Special Occasions",
     description:
-      "Work anniversaries, promotions, farewells — trigger ad-hoc celebrations anytime with a couple of clicks.",
+      "Go beyond birthdays — celebrate work anniversaries, promotions, new hires, and personal milestones. Koki handles every occasion that matters.",
     accent: "bg-coral-100 text-coral-600",
     span: "md:col-span-3",
   },
@@ -80,8 +80,8 @@ export function Features() {
             Platform Features
           </p>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Everything You Need to{" "}
-            <span className="text-primary">Celebrate</span>
+            Everything you need to{" "}
+            <span className="text-primary">celebrate your team</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             From employee onboarding to delivery tracking, Koki gives you the
