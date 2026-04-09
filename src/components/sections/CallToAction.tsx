@@ -67,9 +67,9 @@ export function CallToAction() {
             {/* Decorative gradient blob */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3"
+              className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2"
             >
-              <div className="h-[300px] w-[600px] rounded-full bg-primary-foreground/10 blur-3xl" />
+              <div className="h-[250px] w-[600px] rounded-full bg-primary-foreground/10 blur-3xl" />
             </div>
 
             <div className="relative mx-auto max-w-2xl">
@@ -78,7 +78,7 @@ export function CallToAction() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl"
+                className="font-heading text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl"
               >
                 Ready to make every birthday{" "}
                 <span className="bg-gradient-to-r from-vanilla-200 to-vanilla-400 bg-clip-text text-transparent">

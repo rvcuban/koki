@@ -17,16 +17,21 @@ const NAV_LINKS = [
   { label: "How it Works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
 ] as const;
 
-function smoothScroll(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
-  if (!href.startsWith("#")) return;
-  e.preventDefault();
-  const target = document.querySelector(href);
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+function handleNavClick(
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) {
+  if (href.startsWith("#")) {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
+  // For absolute paths like /about, let the browser navigate normally
 }
 
 export function Navbar() {
@@ -43,9 +48,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Intersection Observer for active section highlighting
+  // Intersection Observer for active section highlighting (only hash links)
   React.useEffect(() => {
-    const sectionIds = NAV_LINKS.map((link) => link.href.replace("#", ""));
+    const hashLinks = NAV_LINKS.filter((link) => link.href.startsWith("#"));
+    const sectionIds = hashLinks.map((link) => link.href.replace("#", ""));
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -97,7 +103,7 @@ export function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                onClick={(e) => smoothScroll(e, href)}
+                onClick={(e) => handleNavClick(e, href)}
                 className={cn(
                   "relative rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300",
                   activeSection === href
@@ -122,7 +128,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <a
             href="#pricing"
-            onClick={(e) => smoothScroll(e, "#pricing")}
+            onClick={(e) => handleNavClick(e, "#pricing")}
             className={cn(buttonVariants({ size: "lg" }))}
           >
             Start Celebrating
@@ -159,7 +165,7 @@ export function Navbar() {
                         key={href}
                         href={href}
                         onClick={(e) => {
-                          smoothScroll(e, href);
+                          handleNavClick(e, href);
                           setOpen(false);
                         }}
                         initial={{ opacity: 0, x: 20 }}
@@ -191,7 +197,7 @@ export function Navbar() {
                       <a
                         href="#pricing"
                         onClick={(e) => {
-                          smoothScroll(e, "#pricing");
+                          handleNavClick(e, "#pricing");
                           setOpen(false);
                         }}
                         className={cn(buttonVariants({ size: "lg" }), "w-full")}

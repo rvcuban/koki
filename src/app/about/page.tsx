@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <div className="mx-auto max-w-3xl text-center">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
                   Making workplaces warmer, one cake at a time
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -84,7 +84,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection delay={0.1}>
               <div className="mx-auto max-w-3xl">
-                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl">
                   Our Story
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-7">
@@ -116,7 +116,7 @@ export default function AboutPage() {
         <section className="py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
-              <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+              <h2 className="text-center font-heading text-2xl font-bold tracking-tight sm:text-3xl">
                 Meet the Team
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
@@ -153,7 +153,7 @@ export default function AboutPage() {
         <section className="py-20 sm:py-24 bg-muted/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
-              <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+              <h2 className="text-center font-heading text-2xl font-bold tracking-tight sm:text-3xl">
                 Our Values
               </h2>
             </AnimatedSection>

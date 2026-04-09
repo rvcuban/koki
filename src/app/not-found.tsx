@@ -30,7 +30,7 @@ export default function NotFound() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h1 className="mt-8 text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="mt-8 font-heading text-4xl font-bold tracking-tight sm:text-5xl">
           Oops! This page got eaten
         </h1>
       </motion.div>
