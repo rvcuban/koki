@@ -20,10 +20,66 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://koki.app";
+const siteName = "Koki";
+const siteDescription =
+  "Koki automates birthday celebrations for your team. From tracking dates to delivering the perfect cake — never miss a birthday again.";
+
 export const metadata: Metadata = {
-  title: "Koki — Make Every Birthday Unforgettable",
-  description:
-    "Koki automates birthday celebrations for your team. From tracking dates to delivering the perfect cake — never miss a birthday again.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Koki — Make Every Birthday Unforgettable",
+    template: "%s | Koki",
+  },
+  description: siteDescription,
+  keywords: [
+    "employee birthdays",
+    "birthday cake delivery",
+    "team celebrations",
+    "office birthdays",
+    "HR automation",
+    "employee engagement",
+    "birthday management",
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName,
+    title: "Koki — Make Every Birthday Unforgettable",
+    description: siteDescription,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Koki — Automated birthday celebrations for your team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Koki — Make Every Birthday Unforgettable",
+    description: siteDescription,
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
