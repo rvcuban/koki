@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "How it Works", href: "#how-it-works" },
@@ -31,6 +32,7 @@ function smoothScroll(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
 export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState<string>("");
 
   React.useEffect(() => {
     function handleScroll() {
@@ -41,24 +43,50 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Intersection Observer for active section highlighting
+  React.useEffect(() => {
+    const sectionIds = NAV_LINKS.map((link) => link.href.replace("#", ""));
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${id}`);
+          }
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, []);
+
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50",
+        "transition-[background-color,box-shadow,border-color] duration-500 ease-in-out",
         scrolled
-          ? "bg-background/95 shadow-sm backdrop-blur-md supports-backdrop-filter:bg-background/80"
-          : "bg-transparent"
+          ? "bg-background/95 shadow-sm backdrop-blur-md supports-backdrop-filter:bg-background/80 border-b border-border/50"
+          : "bg-transparent border-b border-transparent"
       )}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
+        {/* Logo with hover animation */}
         <a
           href="#"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="font-heading text-2xl font-bold tracking-tight text-foreground"
+          className="font-heading text-2xl font-bold tracking-tight text-foreground transition-transform duration-300 hover:scale-105 hover:text-primary"
         >
           Koki
         </a>
@@ -70,9 +98,21 @@ export function Navbar() {
               <a
                 href={href}
                 onClick={(e) => smoothScroll(e, href)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className={cn(
+                  "relative rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300",
+                  activeSection === href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
               >
                 {label}
+                {activeSection === href && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute inset-x-1 -bottom-0.5 h-0.5 rounded-full bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </a>
             </li>
           ))}
@@ -105,33 +145,63 @@ export function Navbar() {
                   Koki
                 </SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-1 px-4">
-                {NAV_LINKS.map(({ label, href }) => (
-                  <a
-                    key={href}
-                    href={href}
-                    onClick={(e) => {
-                      smoothScroll(e, href);
-                      setOpen(false);
-                    }}
-                    className="rounded-lg px-3 py-2.5 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              <AnimatePresence>
+                {open && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="flex flex-col gap-1 px-4"
                   >
-                    {label}
-                  </a>
-                ))}
-                <div className="mt-4">
-                  <a
-                    href="#pricing"
-                    onClick={(e) => {
-                      smoothScroll(e, "#pricing");
-                      setOpen(false);
-                    }}
-                    className={cn(buttonVariants({ size: "lg" }), "w-full")}
-                  >
-                    Start Celebrating
-                  </a>
-                </div>
-              </div>
+                    {NAV_LINKS.map(({ label, href }, index) => (
+                      <motion.a
+                        key={href}
+                        href={href}
+                        onClick={(e) => {
+                          smoothScroll(e, href);
+                          setOpen(false);
+                        }}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: index * 0.08,
+                          ease: "easeOut",
+                        }}
+                        className={cn(
+                          "rounded-lg px-3 py-2.5 text-base font-medium transition-colors hover:bg-muted hover:text-foreground",
+                          activeSection === href
+                            ? "text-primary bg-primary/5"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        {label}
+                      </motion.a>
+                    ))}
+                    <motion.div
+                      className="mt-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: NAV_LINKS.length * 0.08,
+                      }}
+                    >
+                      <a
+                        href="#pricing"
+                        onClick={(e) => {
+                          smoothScroll(e, "#pricing");
+                          setOpen(false);
+                        }}
+                        className={cn(buttonVariants({ size: "lg" }), "w-full")}
+                      >
+                        Start Celebrating
+                      </a>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </SheetContent>
           </Sheet>
         </div>
