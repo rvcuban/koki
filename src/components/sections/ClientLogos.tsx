@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
+
 const LOGOS = [
   "TechFlow",
   "Bright Studio",
@@ -11,8 +16,8 @@ const LOGOS = [
 
 function LogoPlaceholder({ name }: { name: string }) {
   return (
-    <div className="flex h-10 shrink-0 items-center justify-center px-6">
-      <span className="text-lg font-semibold tracking-tight text-muted-foreground/50 select-none whitespace-nowrap">
+    <div className="flex h-12 shrink-0 items-center justify-center px-8 transition-all duration-300 grayscale hover:grayscale-0">
+      <span className="text-xl font-bold tracking-tight text-muted-foreground/40 select-none whitespace-nowrap transition-colors duration-300 hover:text-foreground/70">
         {name}
       </span>
     </div>
@@ -21,20 +26,22 @@ function LogoPlaceholder({ name }: { name: string }) {
 
 export function ClientLogos() {
   return (
-    <section className="border-y bg-muted/20 py-12">
+    <section className="border-y bg-muted/20 py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-medium text-muted-foreground">
-          Trusted by 300+ companies worldwide
-        </p>
+        <AnimatedSection>
+          <p className="text-center text-sm font-medium text-muted-foreground">
+            Trusted by 300+ companies worldwide
+          </p>
+        </AnimatedSection>
 
         {/* Marquee-style scrolling logos */}
-        <div className="relative mt-8 overflow-hidden">
+        <div className="relative mt-10 overflow-hidden">
           {/* Fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
 
-          <div className="flex animate-marquee items-center gap-12">
-            {/* Duplicate the logos for seamless loop */}
+          <div className="flex animate-marquee items-center gap-16">
+            {/* Duplicate logos for seamless infinite loop */}
             {[...LOGOS, ...LOGOS].map((name, i) => (
               <LogoPlaceholder key={`${name}-${i}`} name={name} />
             ))}
