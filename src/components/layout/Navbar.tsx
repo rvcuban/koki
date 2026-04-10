@@ -133,8 +133,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <motion.a
-            href="#pricing"
-            onClick={(e) => handleNavClick(e, "#pricing")}
+            href="/contact"
             className={cn(buttonVariants({ size: "lg" }))}
             whileHover={buttonHover}
             whileTap={buttonTap}
@@ -203,9 +202,8 @@ export function Navbar() {
                       }}
                     >
                       <motion.a
-                        href="#pricing"
-                        onClick={(e) => {
-                          handleNavClick(e, "#pricing");
+                        href="/contact"
+                        onClick={() => {
                           setOpen(false);
                         }}
                         className={cn(buttonVariants({ size: "lg" }), "w-full")}

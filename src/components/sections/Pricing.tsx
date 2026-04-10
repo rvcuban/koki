@@ -45,7 +45,7 @@ const TIERS: PricingTier[] = [
       "Panel de calendario de cumpleaños",
     ],
     cta: "Unirse a la lista de espera",
-    href: "#contact",
+    href: "/contact",
   },
   {
     name: "Business",
@@ -63,7 +63,7 @@ const TIERS: PricingTier[] = [
       "Programación personalizada de entregas",
     ],
     cta: "Solicitar acceso anticipado",
-    href: "#contact",
+    href: "/contact",
     popular: true,
   },
   {

@@ -80,7 +80,7 @@ export function Testimonials() {
           className="mt-12 text-center"
         >
           <motion.a
-            href="#pricing"
+            href="/contact"
             whileHover={buttonHover}
             whileTap={buttonTap}
             className={cn(

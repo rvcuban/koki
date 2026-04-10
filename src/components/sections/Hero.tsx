@@ -446,8 +446,7 @@ export function Hero() {
         >
           {/* Primary CTA with pulse glow */}
           <motion.a
-            href="#pricing"
-            onClick={(e) => smoothScroll(e, "#pricing")}
+            href="/contact"
             className={cn(
               buttonVariants({ size: "lg" }),
               "group relative h-12 gap-2 overflow-hidden px-8 text-base"
