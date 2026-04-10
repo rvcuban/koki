@@ -19,14 +19,14 @@ const CONTACT_INFO = [
   },
   {
     icon: Phone,
-    label: "Phone",
+    label: "Teléfono",
     value: "+34 663 931 266",
     href: "tel:+34663931266",
   },
   {
     icon: MapPin,
-    label: "Location",
-    value: "Barcelona, Spain",
+    label: "Ubicación",
+    value: "Barcelona, España",
     href: "#",
   },
 ] as const;
@@ -46,8 +46,8 @@ export default function ContactPage() {
     const company = (form.elements.namedItem("company") as HTMLInputElement)?.value || "";
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
 
-    const subject = encodeURIComponent(`Koki Contact: ${name} from ${company}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`);
+    const subject = encodeURIComponent(`Contacto Koki: ${name} de ${company}`);
+    const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company}\n\nMensaje:\n${message}`);
     window.location.href = `mailto:ikelromerof@gmail.com?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
@@ -62,11 +62,11 @@ export default function ContactPage() {
             <AnimatedSection>
               <div className="mx-auto max-w-2xl text-center">
                 <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-                  Get in touch
+                  Contáctanos
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Have a question or want to learn more? We&apos;d love to hear
-                  from you.
+                  ¿Tienes alguna pregunta o quieres saber más? Nos encantaría
+                  saber de ti.
                 </p>
               </div>
             </AnimatedSection>
@@ -90,18 +90,18 @@ export default function ContactPage() {
                           <CheckCircle className="size-8 text-green-600 dark:text-green-400" />
                         </div>
                         <h3 className="mt-4 text-xl font-semibold">
-                          Opening your email client!
+                          ¡Abriendo tu cliente de email!
                         </h3>
                         <p className="mt-2 text-sm text-muted-foreground">
-                          Your message is ready to send. Didn&apos;t work?
-                          Email us directly at{" "}
+                          Tu mensaje está listo para enviar. ¿No funcionó?
+                          Escríbenos directamente a{" "}
                           <a
                             href="mailto:ikelromerof@gmail.com"
                             className="text-primary hover:underline"
                           >
                             ikelromerof@gmail.com
                           </a>{" "}
-                          or call{" "}
+                          o llama al{" "}
                           <a
                             href="tel:+34663931266"
                             className="text-primary hover:underline"
@@ -114,7 +114,7 @@ export default function ContactPage() {
                           className="mt-6"
                           onClick={() => setSubmitted(false)}
                         >
-                          Send another message
+                          Enviar otro mensaje
                         </Button>
                       </motion.div>
                     ) : (
@@ -128,12 +128,12 @@ export default function ContactPage() {
                               htmlFor="name"
                               className="mb-1.5 block text-sm font-medium transition-colors duration-300 group-focus-within:text-primary"
                             >
-                              Name
+                              Nombre
                             </label>
                             <input
                               id="name"
                               type="text"
-                              placeholder="Your name"
+                              placeholder="Tu nombre"
                               className={INPUT_CLASSES}
                             />
                           </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                             <input
                               id="email"
                               type="email"
-                              placeholder="you@company.com"
+                              placeholder="tu@empresa.com"
                               className={INPUT_CLASSES}
                             />
                           </div>
@@ -158,12 +158,12 @@ export default function ContactPage() {
                             htmlFor="company"
                             className="mb-1.5 block text-sm font-medium transition-colors duration-300 group-focus-within:text-primary"
                           >
-                            Company
+                            Empresa
                           </label>
                           <input
                             id="company"
                             type="text"
-                            placeholder="Your company name"
+                            placeholder="Nombre de tu empresa"
                             className={INPUT_CLASSES}
                           />
                         </div>
@@ -173,12 +173,12 @@ export default function ContactPage() {
                             htmlFor="message"
                             className="mb-1.5 block text-sm font-medium transition-colors duration-300 group-focus-within:text-primary"
                           >
-                            Message
+                            Mensaje
                           </label>
                           <textarea
                             id="message"
                             rows={5}
-                            placeholder="How can we help?"
+                            placeholder="¿Cómo podemos ayudarte?"
                             className="flex w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm shadow-xs transition-all duration-300 placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 resize-none"
                           />
                         </div>
@@ -205,12 +205,12 @@ export default function ContactPage() {
                                 }}
                                 className="inline-block size-4 rounded-full border-2 border-current border-t-transparent"
                               />
-                              Sending...
+                              Enviando...
                             </motion.span>
                           ) : (
                             <span className="flex items-center gap-2">
                               <Send className="size-4" />
-                              Send Message
+                              Enviar mensaje
                             </span>
                           )}
                         </Button>
@@ -245,12 +245,12 @@ export default function ContactPage() {
                   ))}
 
                   <div className="mt-4 rounded-xl border bg-muted/50 p-6">
-                    <p className="text-sm font-medium">Office Hours</p>
+                    <p className="text-sm font-medium">Horario de oficina</p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Monday — Friday: 9:00 – 18:00 CET
+                      Lunes — Viernes: 9:00 – 18:00 CET
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Saturday — Sunday: Closed
+                      Sábado — Domingo: Cerrado
                     </p>
                   </div>
 
@@ -268,10 +268,10 @@ export default function ContactPage() {
                       🎂
                     </motion.span>
                     <p className="mt-2 text-sm font-medium text-primary">
-                      Ready to celebrate?
+                      ¿Listo para celebrar?
                     </p>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      We&apos;ll help you get started in under 5 minutes.
+                      Te ayudamos a empezar en menos de 5 minutos.
                     </p>
                   </div>
                 </div>

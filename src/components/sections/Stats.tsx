@@ -10,25 +10,25 @@ const STATS = [
   {
     target: 70,
     suffix: "%",
-    label: "of employees say recognition boosts morale",
+    label: "de empleados dice que el reconocimiento mejora la moral",
     icon: TrendingUp,
   },
   {
     target: 2,
     suffix: "x",
-    label: "more likely to stay when valued",
+    label: "más probabilidad de quedarse si se sienten valorados",
     icon: Heart,
   },
   {
     target: 10,
     suffix: "min",
-    label: "to set up — then it runs itself",
+    label: "para configurarlo — después funciona solo",
     icon: Zap,
   },
   {
     target: 0,
     suffix: "",
-    label: "birthdays forgotten",
+    label: "cumpleaños olvidados",
     icon: Cake,
   },
 ] as const;
@@ -57,10 +57,10 @@ export function Stats() {
         <AnimatedSection>
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <p className="mb-3 text-sm font-semibold tracking-wider text-primary uppercase">
-              Why it matters
+              Por qué importa
             </p>
             <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-              Celebrations drive culture
+              Las celebraciones impulsan la cultura
             </h2>
           </div>
         </AnimatedSection>
@@ -110,7 +110,7 @@ export function Stats() {
 
           {/* Sources footnote */}
           <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-muted-foreground/60">
-            Sources: Gallup State of the Global Workplace Report; Deloitte
+            Fuentes: Gallup State of the Global Workplace Report; Deloitte
             Talent 2020
           </p>
         </AnimatedSection>

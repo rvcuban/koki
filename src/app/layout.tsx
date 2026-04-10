@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Geist_Mono } from "next/font/google";
+import { Nunito, Baloo_2, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const nunito = Nunito({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
+const baloo2 = Baloo_2({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -23,45 +23,45 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://koki.app";
 const siteName = "Koki";
 const siteDescription =
-  "Koki automates birthday celebrations for your team. From tracking dates to delivering the perfect cake — never miss a birthday again.";
+  "Koki automatiza las celebraciones de cumpleaños de tu equipo. Desde el seguimiento de fechas hasta la entrega de la tarta perfecta — nunca más olvides un cumpleaños.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Koki — Make Every Birthday Unforgettable",
+    default: "Koki — Haz cada cumpleaños inolvidable",
     template: "%s | Koki",
   },
   description: siteDescription,
   keywords: [
-    "employee birthdays",
-    "birthday cake delivery",
-    "team celebrations",
-    "office birthdays",
-    "HR automation",
-    "employee engagement",
-    "birthday management",
+    "cumpleaños empleados",
+    "entrega tartas cumpleaños",
+    "celebraciones equipo",
+    "cumpleaños oficina",
+    "automatización RRHH",
+    "engagement empleados",
+    "gestión cumpleaños",
   ],
   authors: [{ name: siteName }],
   creator: siteName,
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "es_ES",
     url: siteUrl,
     siteName,
-    title: "Koki — Make Every Birthday Unforgettable",
+    title: "Koki — Haz cada cumpleaños inolvidable",
     description: siteDescription,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Koki — Automated birthday celebrations for your team",
+        alt: "Koki — Celebraciones de cumpleaños automatizadas para tu equipo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Koki — Make Every Birthday Unforgettable",
+    title: "Koki — Haz cada cumpleaños inolvidable",
     description: siteDescription,
     images: ["/og-image.png"],
   },
@@ -89,8 +89,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${inter.variable} ${playfairDisplay.variable} ${geistMono.variable} h-full antialiased`}
+      lang="es"
+      className={`${nunito.variable} ${baloo2.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

@@ -20,7 +20,7 @@ export default function NotFound() {
           ease: "easeInOut",
         }}
       >
-        <span className="text-8xl sm:text-9xl" role="img" aria-label="Cake">
+        <span className="text-8xl sm:text-9xl" role="img" aria-label="Tarta">
           🎂
         </span>
       </motion.div>
@@ -31,7 +31,7 @@ export default function NotFound() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <h1 className="mt-8 font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-          Oops! This page got eaten
+          ¡Ups! Esta página se la comieron
         </h1>
       </motion.div>
 
@@ -41,8 +41,8 @@ export default function NotFound() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="mt-4 max-w-md text-lg text-muted-foreground"
       >
-        Looks like someone celebrated a little too hard. The page you&apos;re
-        looking for doesn&apos;t exist — but the cake was delicious.
+        Parece que alguien celebró de más. La página que buscás no
+        existe — pero la tarta estaba deliciosa.
       </motion.p>
 
       <motion.div
@@ -80,7 +80,7 @@ export default function NotFound() {
           href="/"
           className={cn(buttonVariants({ size: "lg" }), "mt-8")}
         >
-          Back to Home
+          Volver al inicio
         </Link>
       </motion.div>
     </div>

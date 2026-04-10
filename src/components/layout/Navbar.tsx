@@ -15,10 +15,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { buttonHover, buttonTap } from "@/lib/animations";
 
 const NAV_LINKS = [
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "/about" },
+  { label: "Cómo funciona", href: "#how-it-works" },
+  { label: "Características", href: "#features" },
+  { label: "Precios", href: "#pricing" },
+  { label: "Nosotros", href: "/about" },
 ] as const;
 
 function handleNavClick(
@@ -26,10 +26,15 @@ function handleNavClick(
   href: string
 ) {
   if (href.startsWith("#")) {
-    e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
+      // We're on the home page — smooth scroll to the section
+      e.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // We're on a subpage (/about, /contact) — navigate to home + anchor
+      e.preventDefault();
+      window.location.href = `/${href}`;
     }
   }
   // For absolute paths like /about, let the browser navigate normally
@@ -134,7 +139,7 @@ export function Navbar() {
             whileHover={buttonHover}
             whileTap={buttonTap}
           >
-            Get Early Access
+            Acceso anticipado
           </motion.a>
         </div>
 
@@ -143,7 +148,7 @@ export function Navbar() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               render={
-                <Button variant="ghost" size="icon" aria-label="Open menu" />
+                <Button variant="ghost" size="icon" aria-label="Abrir menú" />
               }
             >
               <Menu className="size-5" />
@@ -207,7 +212,7 @@ export function Navbar() {
                         whileHover={buttonHover}
                         whileTap={buttonTap}
                       >
-                        Get Early Access
+                        Acceso anticipado
                       </motion.a>
                     </motion.div>
                   </motion.div>

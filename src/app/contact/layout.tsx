@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Koki",
+  title: "Contacto — Koki",
   description:
-    "Get in touch with the Koki team. We'd love to hear from you.",
+    "Ponte en contacto con el equipo de Koki. Nos encantaría saber de ti.",
 };
 
 export default function ContactLayout({

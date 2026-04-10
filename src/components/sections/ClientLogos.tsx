@@ -30,7 +30,7 @@ export function ClientLogos() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <p className="text-center text-sm font-medium text-muted-foreground">
-            Built to connect with the tools you already use
+            Diseñado para conectar con las herramientas que ya usas
           </p>
         </AnimatedSection>
 

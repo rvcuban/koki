@@ -7,22 +7,22 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 import { motion } from "framer-motion";
 
 const PRODUCT_LINKS = [
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Integrations", href: "#features" },
+  { label: "Cómo funciona", href: "#how-it-works" },
+  { label: "Características", href: "#features" },
+  { label: "Precios", href: "#pricing" },
+  { label: "Integraciones", href: "#features" },
 ] as const;
 
 const COMPANY_LINKS = [
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Nosotros", href: "/about" },
+  { label: "Contacto", href: "/contact" },
 ] as const;
 
 // TODO: GDPR REQUIREMENT — Privacy Policy, Terms, and Cookie Policy pages must exist before collecting any user data (newsletter, contact form)
 const LEGAL_LINKS = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Cookie Policy", href: "#" },
+  { label: "Política de privacidad", href: "#" },
+  { label: "Términos de servicio", href: "#" },
+  { label: "Política de cookies", href: "#" },
 ] as const;
 
 function FooterColumn({
@@ -82,18 +82,18 @@ function SocialIcon({
 function NewsletterForm() {
   return (
     <div className="mt-6">
-      <p className="text-sm font-medium text-foreground">Stay in the loop</p>
+      <p className="text-sm font-medium text-foreground">Mantente al día</p>
       <p className="mt-1 text-sm text-muted-foreground">
-        Get updates on new features and celebrations tips.
+        Recibe novedades sobre nuevas funciones y consejos para celebrar.
       </p>
       <div className="mt-3 flex gap-2">
         <input
           type="email"
-          placeholder="you@company.com"
+          placeholder="tu@empresa.com"
           className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 text-sm shadow-xs transition-all duration-300 placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20"
         />
         <button className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-md">
-          Subscribe
+          Suscribirse
         </button>
       </div>
     </div>
@@ -118,8 +118,8 @@ export function Footer() {
                 Koki
               </Link>
               <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-                Automated birthday cake delivery for workplaces. Never miss a
-                celebration again.
+                Entrega automatizada de tartas de cumpleaños para empresas. Nunca
+                más olvides una celebración.
               </p>
               <div className="mt-5 flex items-center gap-4">
                 {/* TODO: Add real X/Twitter profile URL */}
@@ -163,8 +163,8 @@ export function Footer() {
               <NewsletterForm />
             </div>
 
-            <FooterColumn title="Product" links={PRODUCT_LINKS} />
-            <FooterColumn title="Company" links={COMPANY_LINKS} />
+            <FooterColumn title="Producto" links={PRODUCT_LINKS} />
+            <FooterColumn title="Empresa" links={COMPANY_LINKS} />
             <FooterColumn title="Legal" links={LEGAL_LINKS} />
           </motion.div>
         </AnimatedSection>
@@ -173,10 +173,10 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-2">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Koki. All rights reserved.
+            &copy; {new Date().getFullYear()} Koki. Todos los derechos reservados.
           </p>
           <p className="text-center text-xs text-muted-foreground/60">
-            Built with 🎂 by Koki
+            Hecho con 🎂 por Koki
           </p>
         </div>
       </div>

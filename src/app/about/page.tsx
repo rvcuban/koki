@@ -15,21 +15,21 @@ import {
 const VALUES = [
   {
     icon: Heart,
-    title: "Celebration",
+    title: "Celebración",
     description:
-      "We believe every birthday deserves recognition. Small gestures build big cultures.",
+      "Creemos que cada cumpleaños merece reconocimiento. Los pequeños gestos construyen grandes culturas.",
   },
   {
     icon: Zap,
-    title: "Automation",
+    title: "Automatización",
     description:
-      "Set it once, forget it forever. We handle the logistics so you can focus on what matters.",
+      "Configúralo una vez, olvídate para siempre. Nos encargamos de la logística para que te centres en lo que importa.",
   },
   {
     icon: Award,
-    title: "Quality",
+    title: "Calidad",
     description:
-      "We partner only with the best local bakeries to ensure every cake is a memorable experience.",
+      "Trabajamos solo con las mejores panaderías locales para asegurar que cada tarta sea una experiencia memorable.",
   },
 ] as const;
 
@@ -37,22 +37,22 @@ const VALUES = [
 const TEAM = [
   {
     name: "Sofia Martinez",
-    role: "CEO & Co-founder",
+    role: "CEO y cofundadora",
     initials: "SM",
   },
   {
     name: "Lucas Chen",
-    role: "CTO & Co-founder",
+    role: "CTO y cofundador",
     initials: "LC",
   },
   {
     name: "Maria Gonzalez",
-    role: "Head of Operations",
+    role: "Directora de operaciones",
     initials: "MG",
   },
   {
     name: "David Kim",
-    role: "Head of Partnerships",
+    role: "Director de alianzas",
     initials: "DK",
   },
 ] as const;
@@ -68,12 +68,12 @@ export default function AboutPage() {
             <AnimatedSection>
               <div className="mx-auto max-w-3xl text-center">
                 <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-                  Making workplaces warmer, one cake at a time
+                  Haciendo las oficinas más cálidas, una tarta a la vez
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                  We started Koki with a simple observation: companies forget
-                  birthdays. It&apos;s not because they don&apos;t care — they
-                  just don&apos;t have the time. We built the solution.
+                  Empezamos Koki con una simple observación: las empresas olvidan
+                  los cumpleaños. No es porque no les importe — simplemente no
+                  tienen tiempo. Construimos la solución.
                 </p>
               </div>
             </AnimatedSection>
@@ -86,27 +86,28 @@ export default function AboutPage() {
             <AnimatedSection delay={0.1}>
               <div className="mx-auto max-w-3xl">
                 <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl">
-                  Our Story
+                  Nuestra historia
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-7">
                   <p>
-                    It all started when our co-founder missed her own
-                    teammate&apos;s birthday — for the third year in a row. She
-                    realized that in companies of 50, 100, or 500 people,
-                    keeping track of every celebration is practically impossible
-                    without the right tools.
+                    Todo empezó cuando nuestra cofundadora olvidó el cumpleaños
+                    de su compañera de equipo — por tercer año consecutivo. Se
+                    dio cuenta de que en empresas de 50, 100 o 500 personas,
+                    llevar el control de cada celebración es prácticamente
+                    imposible sin las herramientas adecuadas.
                   </p>
                   <p>
-                    So we built Koki: an automated platform that connects to
-                    your HR system, finds every upcoming birthday, and delivers a
-                    freshly baked cake right to the office. No spreadsheets. No
-                    calendar reminders. No one left out.
+                    Así que construimos Koki: una plataforma automatizada que se
+                    conecta a tu sistema de RRHH, encuentra cada cumpleaños
+                    próximo y entrega una tarta recién hecha en la oficina. Sin
+                    hojas de cálculo. Sin recordatorios de calendario. Nadie
+                    queda fuera.
                   </p>
                   <p>
-                    We&apos;re just getting started — launching in Barcelona and
-                    working with our first teams to build something that makes
-                    every workplace a little warmer. Because when people feel
-                    appreciated, they do their best work.
+                    Estamos empezando — lanzando en Barcelona y trabajando con
+                    nuestros primeros equipos para construir algo que haga cada
+                    oficina un poco más cálida. Porque cuando las personas se
+                    sienten valoradas, dan lo mejor de sí.
                   </p>
                 </div>
               </div>
@@ -119,11 +120,11 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <h2 className="text-center font-heading text-2xl font-bold tracking-tight sm:text-3xl">
-                Meet the Team
+                Conoce al equipo
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
-                A small team with a big mission — making every workplace a
-                little warmer.
+                Un equipo pequeño con una gran misión — hacer cada oficina un
+                poco más cálida.
               </p>
             </AnimatedSection>
 
@@ -156,7 +157,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <h2 className="text-center font-heading text-2xl font-bold tracking-tight sm:text-3xl">
-                Our Values
+                Nuestros valores
               </h2>
             </AnimatedSection>
 

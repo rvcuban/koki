@@ -25,9 +25,9 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 function EmployeeTableMockup() {
   const rows = [
-    { initials: "SM", name: "Sarah Mitchell", birthday: "Mar 15", color: "bg-coral-400", status: "Active", statusColor: "bg-teal-100 text-teal-700" },
-    { initials: "JC", name: "James Chen", birthday: "Apr 02", color: "bg-teal-400", status: "Active", statusColor: "bg-teal-100 text-teal-700" },
-    { initials: "LP", name: "Luna Park", birthday: "May 21", color: "bg-vanilla-600", status: "Upcoming", statusColor: "bg-vanilla-100 text-vanilla-800" },
+    { initials: "SM", name: "Sarah Mitchell", birthday: "Mar 15", color: "bg-coral-400", status: "Activo", statusColor: "bg-teal-100 text-teal-700" },
+    { initials: "JC", name: "James Chen", birthday: "Apr 02", color: "bg-teal-400", status: "Activo", statusColor: "bg-teal-100 text-teal-700" },
+    { initials: "LP", name: "Luna Park", birthday: "May 21", color: "bg-vanilla-600", status: "Próximo", statusColor: "bg-vanilla-100 text-vanilla-800" },
   ];
 
   return (
@@ -35,13 +35,13 @@ function EmployeeTableMockup() {
       {/* Table header */}
       <div className="grid grid-cols-3 gap-2 border-b border-border/40 bg-teal-50/60 px-3 py-2">
         <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
-          Employee
+          Empleado
         </span>
         <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
-          Birthday
+          Cumpleaños
         </span>
         <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
-          Status
+          Estado
         </span>
       </div>
       {/* Table rows */}
@@ -83,7 +83,7 @@ function RulesEngineMockup() {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-foreground">
-            Birthday cakes
+            Tartas de cumpleaños
           </span>
           {/* Toggle ON */}
           <div className="flex h-5 w-9 items-center rounded-full bg-teal-500 px-0.5">
@@ -92,7 +92,7 @@ function RulesEngineMockup() {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-foreground">
-            Work anniversaries
+            Aniversarios laborales
           </span>
           {/* Toggle OFF */}
           <div className="flex h-5 w-9 items-center rounded-full bg-warm-200 px-0.5">
@@ -104,10 +104,10 @@ function RulesEngineMockup() {
       {/* Dropdown */}
       <div className="mt-3 rounded-lg border border-teal-200/50 bg-teal-50/30 px-3 py-1.5">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] text-teal-600">Default cake</span>
+          <span className="text-[11px] text-teal-600">Tarta predeterminada</span>
           <div className="flex items-center gap-1">
             <span className="text-xs font-medium text-foreground">
-              Chocolate Cake
+              Tarta de chocolate
             </span>
             <svg
               className="size-3 text-teal-400"
@@ -130,7 +130,7 @@ function RulesEngineMockup() {
       <div className="mt-3 flex items-center gap-1.5">
         <div className="size-2 rounded-full bg-teal-500 animate-pulse" />
         <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
-          Active
+          Activo
         </span>
       </div>
     </div>
@@ -141,21 +141,21 @@ function OrderDashboardMockup() {
   const orders = [
     {
       status: "bg-teal-500",
-      label: "Delivered",
+      label: "Entregado",
       labelColor: "text-teal-600",
       name: "Sarah M.",
       date: "Mar 15",
     },
     {
       status: "bg-vanilla-500",
-      label: "In transit",
+      label: "En tránsito",
       labelColor: "text-vanilla-700",
       name: "James C.",
       date: "Apr 02",
     },
     {
       status: "bg-warm-300",
-      label: "Scheduled",
+      label: "Programado",
       labelColor: "text-warm-500",
       name: "Luna P.",
       date: "May 21",
@@ -166,7 +166,7 @@ function OrderDashboardMockup() {
     <div className="overflow-hidden rounded-xl border border-border/50 bg-teal-50/30 p-3 shadow-sm">
       <div className="mb-2 flex items-center justify-between">
         <span className="text-[10px] font-semibold uppercase tracking-wider text-teal-600">
-          Recent orders
+          Pedidos recientes
         </span>
         <span className="rounded-full bg-vanilla-100 px-2 py-0.5 text-[9px] font-medium text-vanilla-800">
           3 total
@@ -209,14 +209,14 @@ function NotificationsMockup() {
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-[11px] font-semibold text-foreground">
-              Birthday Reminder
+              Recordatorio de cumpleaños
             </p>
             <p className="mt-0.5 truncate text-[10px] text-teal-600/80">
-              Sarah&apos;s birthday is in 3 days
+              El cumpleaños de Sarah es en 3 días
             </p>
           </div>
           <span className="shrink-0 text-[9px] text-coral-400">
-            2m ago
+            hace 2m
           </span>
         </div>
       </div>
@@ -228,10 +228,10 @@ function NotificationsMockup() {
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-[11px] font-semibold text-foreground">
-              Cake ordered!
+              ¡Tarta pedida!
             </p>
             <p className="mt-0.5 truncate text-[10px] text-teal-600/80">
-              Chocolate cake for James — delivery Apr 2
+              Tarta de chocolate para James — entrega 2 abr
             </p>
           </div>
         </div>
@@ -268,10 +268,10 @@ function CelebrationMockup() {
       <div className="relative text-center">
         <p className="text-2xl">🎉</p>
         <p className="mt-1 text-sm font-semibold text-foreground">
-          Congratulations!
+          ¡Felicidades!
         </p>
         <p className="mt-0.5 text-xs text-muted-foreground">
-          5 years at the company
+          5 años en la empresa
         </p>
         <div className="mx-auto mt-2 h-px w-12 bg-gradient-to-r from-transparent via-coral-300 to-transparent" />
       </div>
@@ -284,11 +284,11 @@ function CelebrationMockup() {
    ============================================= */
 
 const MOCKUP_MAP: Record<string, React.FC> = {
-  "Smart Employee Management": EmployeeTableMockup,
-  "Intelligent Rules Engine": RulesEngineMockup,
-  "Real-time Order Dashboard": OrderDashboardMockup,
-  "Automated Notifications": NotificationsMockup,
-  "Special Occasions": CelebrationMockup,
+  "Gestión inteligente de empleados": EmployeeTableMockup,
+  "Motor de reglas inteligente": RulesEngineMockup,
+  "Panel de pedidos en tiempo real": OrderDashboardMockup,
+  "Notificaciones automáticas": NotificationsMockup,
+  "Ocasiones especiales": CelebrationMockup,
 };
 
 /* =============================================
@@ -298,41 +298,41 @@ const MOCKUP_MAP: Record<string, React.FC> = {
 const FEATURES = [
   {
     icon: Users,
-    title: "Smart Employee Management",
+    title: "Gestión inteligente de empleados",
     description:
-      "Bulk upload employee data via CSV or connect directly with your HR platform. We're actively building integrations with tools like Personio, Factorial, and BambooHR — with more on the way.",
+      "Carga masiva de datos de empleados por CSV o conecta directamente con tu plataforma de RRHH. Estamos integrando herramientas como Personio, Factorial y BambooHR — con más en camino.",
     accent: "bg-coral-100 text-coral-600",
     span: "md:col-span-2",
   },
   {
     icon: Settings2,
-    title: "Intelligent Rules Engine",
+    title: "Motor de reglas inteligente",
     description:
-      "Set your celebration rules once and let Koki run forever. Configure per-team preferences, dietary restrictions, cake styles, and delivery windows.",
+      "Configura tus reglas de celebración una vez y deja que Koki funcione para siempre. Establece preferencias por equipo, restricciones dietéticas, estilos de tarta y ventanas de entrega.",
     accent: "bg-teal-100 text-teal-600",
     span: "",
   },
   {
     icon: LayoutDashboard,
-    title: "Real-time Order Dashboard",
+    title: "Panel de pedidos en tiempo real",
     description:
-      "Track every delivery in real time. See upcoming celebrations, manage orders, and get full visibility into your celebration pipeline.",
+      "Sigue cada entrega en tiempo real. Consulta próximas celebraciones, gestiona pedidos y obtén visibilidad completa del flujo de celebraciones.",
     accent: "bg-vanilla-200 text-vanilla-800",
     span: "",
   },
   {
     icon: Bell,
-    title: "Automated Notifications",
+    title: "Notificaciones automáticas",
     description:
-      "Never miss a birthday again. Automatic reminders at 2 weeks, 1 week, and 1 day before — for managers, teams, and admins.",
+      "Nunca más olvides un cumpleaños. Recordatorios automáticos a 2 semanas, 1 semana y 1 día antes — para managers, equipos y administradores.",
     accent: "bg-teal-100 text-teal-600",
     span: "md:col-span-2",
   },
   {
     icon: PartyPopper,
-    title: "Special Occasions",
+    title: "Ocasiones especiales",
     description:
-      "Go beyond birthdays — celebrate work anniversaries, promotions, new hires, and personal milestones. Koki handles every occasion that matters.",
+      "Ve más allá de los cumpleaños — celebra aniversarios laborales, ascensos, nuevas incorporaciones e hitos personales. Koki se encarga de cada ocasión importante.",
     accent: "bg-coral-100 text-coral-600",
     span: "md:col-span-3",
   },
@@ -361,15 +361,14 @@ export function Features() {
         <AnimatedSection>
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-3 text-sm font-semibold tracking-wider text-primary uppercase">
-              Platform Features
+              Funcionalidades
             </p>
             <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              Everything you need to{" "}
-              <span className="text-primary">celebrate your team</span>
+              Todo lo que necesitás para{" "}
+              <span className="text-primary">celebrar a tu equipo</span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              From employee onboarding to delivery tracking, Koki gives you the
-              tools to make every team member feel special.
+              Desde la incorporación de empleados hasta el seguimiento de entregas, Koki te da las herramientas para que cada miembro del equipo se sienta especial.
             </p>
           </div>
         </AnimatedSection>
@@ -407,7 +406,7 @@ export function Features() {
                     ) : (
                       <div className="flex h-32 items-center justify-center rounded-lg bg-muted/50">
                         <span className="text-xs font-medium text-muted-foreground/60">
-                          Preview coming soon
+                          Vista previa próximamente
                         </span>
                       </div>
                     )}

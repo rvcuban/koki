@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Koki",
+  title: "Nosotros — Koki",
   description:
-    "Learn about Koki's mission to make every workplace celebration effortless and meaningful.",
+    "Descubre la misión de Koki: hacer que cada celebración en el trabajo sea fácil y significativa.",
 };
 
 export default function AboutLayout({

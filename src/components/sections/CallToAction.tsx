@@ -49,9 +49,9 @@ const PARTICLES = [
 ];
 
 const TRUST_BADGES = [
-  { icon: ShieldCheck, text: "No credit card required" },
-  { icon: Zap, text: "Set up in minutes" },
-  { icon: MapPin, text: "Made in Barcelona" },
+  { icon: ShieldCheck, text: "Sin tarjeta de crédito" },
+  { icon: Zap, text: "Configúralo en minutos" },
+  { icon: MapPin, text: "Hecho en Barcelona" },
 ];
 
 export function CallToAction() {
@@ -81,9 +81,9 @@ export function CallToAction() {
                 transition={{ duration: 0.6 }}
                 className="font-heading text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl"
               >
-                Ready to never forget a birthday{" "}
+                ¿Listo para no olvidar nunca un cumpleaños{" "}
                 <span className="bg-gradient-to-r from-vanilla-200 to-vanilla-400 bg-clip-text text-transparent">
-                  again
+                  más
                 </span>
                 ?
               </motion.h2>
@@ -95,8 +95,8 @@ export function CallToAction() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80"
               >
-                Be among the first teams in Barcelona to automate
-                celebrations. Set it up once — Koki handles the rest.
+                Sé de los primeros equipos en Barcelona en automatizar
+                celebraciones. Configúralo una vez — Koki se encarga del resto.
               </motion.p>
 
               <motion.div
@@ -115,7 +115,7 @@ export function CallToAction() {
                   whileHover={buttonHover}
                   whileTap={buttonTap}
                 >
-                  Get Early Access — It&apos;s Free
+                  Acceso anticipado — Es gratis
                 </motion.a>
               </motion.div>
 

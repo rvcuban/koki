@@ -9,27 +9,27 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 const STEPS = [
   {
     number: "01",
-    title: "Connect Your Team",
+    title: "Conecta tu equipo",
     description:
-      "Upload your employee list via CSV or connect your HR platform. We're building integrations with the most popular tools in Europe.",
+      "Sube la lista de empleados por CSV o conecta tu plataforma de RRHH. Estamos integrando las herramientas más populares de Europa.",
     icon: Users,
     accent: "from-coral-400 to-coral-500",
     accentBg: "bg-coral-50",
   },
   {
     number: "02",
-    title: "Set Your Rules",
+    title: "Configura tus reglas",
     description:
-      "Choose cakes, set dietary preferences, and configure automation rules. Set it once — it runs forever.",
+      "Elige tartas, establece preferencias dietéticas y configura reglas de automatización. Configúralo una vez — funciona para siempre.",
     icon: Settings,
     accent: "from-teal-400 to-teal-500",
     accentBg: "bg-teal-50",
   },
   {
     number: "03",
-    title: "Sit Back & Celebrate",
+    title: "Relájate y celebra",
     description:
-      "We handle everything — ordering, delivery, and notifications. Your team feels valued every single time.",
+      "Nos encargamos de todo — pedidos, entregas y notificaciones. Tu equipo se siente valorado cada vez.",
     icon: Cake,
     accent: "from-vanilla-500 to-vanilla-600",
     accentBg: "bg-vanilla-50",
@@ -61,14 +61,14 @@ export function HowItWorks() {
         <AnimatedSection>
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-3 text-sm font-semibold tracking-wider text-primary uppercase">
-              Simple as 1-2-3
+              Así de fácil
             </p>
             <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              How Koki Works
+              Cómo funciona Koki
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Three simple steps to automate birthday celebrations and make your
-              team feel truly appreciated.
+              Tres simples pasos para automatizar las celebraciones de cumpleaños
+              y hacer que tu equipo se sienta valorado.
             </p>
           </div>
         </AnimatedSection>

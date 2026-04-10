@@ -11,21 +11,21 @@ import { cn } from "@/lib/utils";
 const PERKS = [
   {
     icon: Gift,
-    title: "Free pilot programme",
+    title: "Programa piloto gratuito",
     description:
-      "Join as a founding team and get 3 months free. No commitment, no credit card.",
+      "Únete como equipo fundador y obtén 3 meses gratis. Sin compromiso, sin tarjeta de crédito.",
   },
   {
     icon: MessageCircle,
-    title: "Direct line to founders",
+    title: "Línea directa con los fundadores",
     description:
-      "You'll work with us directly. Your feedback shapes the product roadmap.",
+      "Trabajarás con nosotros directamente. Tu feedback define la hoja de ruta del producto.",
   },
   {
     icon: Tag,
-    title: "Founding member pricing",
+    title: "Precio de miembro fundador",
     description:
-      "Lock in our best rate — forever. As a thank you for believing early.",
+      "Asegura nuestra mejor tarifa — para siempre. Como agradecimiento por confiar desde el principio.",
   },
 ] as const;
 
@@ -36,12 +36,10 @@ export function Testimonials() {
         <AnimatedSection>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-              Be part of the beginning
+              Sé parte del inicio
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              We&apos;re looking for our first teams in Barcelona to shape Koki
-              together. Early adopters get a voice in the product — and a few
-              perks, too.
+              Buscamos nuestros primeros equipos en Barcelona para dar forma a Koki juntos. Los early adopters tienen voz en el producto — y algunos beneficios extra.
             </p>
           </div>
         </AnimatedSection>
@@ -90,7 +88,7 @@ export function Testimonials() {
               "px-8 text-base font-semibold"
             )}
           >
-            Apply for Early Access
+            Solicitar acceso anticipado
           </motion.a>
         </motion.div>
       </div>

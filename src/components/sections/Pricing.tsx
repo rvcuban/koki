@@ -36,15 +36,15 @@ const TIERS: PricingTier[] = [
     annualPrice: "€4",
     period: "/cake",
     description:
-      "Perfect for small teams getting started with automated celebrations.",
+      "Perfecto para equipos pequeños que empiezan con celebraciones automatizadas.",
     features: [
-      "Up to 25 employees",
-      "CSV employee upload",
-      "Email notifications",
-      "Standard cake selection",
-      "Birthday calendar dashboard",
+      "Hasta 25 empleados",
+      "Carga de empleados por CSV",
+      "Notificaciones por email",
+      "Selección estándar de tartas",
+      "Panel de calendario de cumpleaños",
     ],
-    cta: "Join the Waitlist",
+    cta: "Unirse a la lista de espera",
     href: "#contact",
   },
   {
@@ -53,34 +53,34 @@ const TIERS: PricingTier[] = [
     annualPrice: "€5.50",
     period: "/cake",
     description:
-      "Full automation for growing companies that care about their people.",
+      "Automatización completa para empresas en crecimiento que se preocupan por su gente.",
     features: [
-      "Up to 100 employees",
-      "HRIS integration",
-      "Celebration rules engine",
-      "Full cake menu",
-      "Priority support",
-      "Custom delivery scheduling",
+      "Hasta 100 empleados",
+      "Integración con RRHH",
+      "Motor de reglas de celebración",
+      "Menú completo de tartas",
+      "Soporte prioritario",
+      "Programación personalizada de entregas",
     ],
-    cta: "Request Early Access",
+    cta: "Solicitar acceso anticipado",
     href: "#contact",
     popular: true,
   },
   {
     name: "Enterprise",
-    monthlyPrice: "Custom",
-    annualPrice: "Custom",
+    monthlyPrice: "A medida",
+    annualPrice: "A medida",
     description:
-      "Tailored solutions for organisations with unique celebration needs.",
+      "Soluciones a medida para organizaciones con necesidades únicas de celebración.",
     features: [
-      "Unlimited employees",
-      "Custom bakery partnerships",
-      "Full API access",
-      "Dedicated account manager",
-      "Custom branding",
-      "SLA guarantee",
+      "Empleados ilimitados",
+      "Asociaciones personalizadas con panaderías",
+      "Acceso completo a la API",
+      "Gestor de cuenta dedicado",
+      "Branding personalizado",
+      "Garantía SLA",
     ],
-    cta: "Talk to Us",
+    cta: "Habla con nosotros",
     href: "/contact",
   },
 ];
@@ -100,7 +100,7 @@ function PricingToggle({
           !isAnnual ? "text-foreground" : "text-muted-foreground"
         )}
       >
-        Monthly
+        Mensual
       </span>
       <button
         type="button"
@@ -127,7 +127,7 @@ function PricingToggle({
           isAnnual ? "text-foreground" : "text-muted-foreground"
         )}
       >
-        Annual
+        Anual
       </span>
       {isAnnual && (
         <AnimatePresence>
@@ -141,7 +141,7 @@ function PricingToggle({
               variant="secondary"
               className="bg-teal-100 text-teal-600 text-xs"
             >
-              Save 20%
+              Ahorra 20%
             </Badge>
           </motion.div>
         </AnimatePresence>
@@ -158,7 +158,7 @@ function PricingCard({
   isAnnual: boolean;
 }) {
   const price = isAnnual ? tier.annualPrice : tier.monthlyPrice;
-  const isCustom = price === "Custom";
+  const isCustom = price === "A medida";
 
   return (
     <Card
@@ -172,7 +172,7 @@ function PricingCard({
       {tier.popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
           <Badge className="animate-pulse bg-coral-500 text-white px-3 py-0.5 text-xs font-semibold">
-            Most Popular
+            Más popular
           </Badge>
         </div>
       )}
@@ -209,7 +209,7 @@ function PricingCard({
             animate={{ opacity: 1, height: "auto" }}
             className="text-xs text-teal-600 font-medium -mt-4"
           >
-            Billed annually — save 20%
+            Facturación anual — ahorra 20%
           </motion.p>
         )}
 
@@ -253,11 +253,11 @@ export function Pricing() {
         <AnimatedSection>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-              Early access pricing
+              Precios de acceso anticipado
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Simple per-cake pricing — you only pay when we deliver. Founding
-              companies lock in early-access rates.
+              Precio simple por tarta — solo pagas cuando entregamos. Las empresas
+              fundadoras aseguran tarifas de acceso anticipado.
             </p>
           </div>
         </AnimatedSection>
@@ -284,8 +284,8 @@ export function Pricing() {
         </motion.div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground">
-          All plans include personal onboarding. Early adopters get
-          founding-member pricing locked in for 12 months.
+          Todos los planes incluyen onboarding personalizado. Los early adopters aseguran
+          precios de miembro fundador durante 12 meses.
         </p>
       </div>
     </section>

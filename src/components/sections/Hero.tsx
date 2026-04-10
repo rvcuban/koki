@@ -116,7 +116,7 @@ function AnimatedGradientBackground() {
 const upcomingBirthdays = [
   { name: "Sarah Johnson", date: "Apr 12", cake: "Red Velvet", avatar: "SJ" },
   { name: "Marcus Chen", date: "Apr 15", cake: "Chocolate", avatar: "MC" },
-  { name: "Lisa Park", date: "Apr 19", cake: "Carrot Cake", avatar: "LP" },
+  { name: "Lisa Park", date: "Apr 19", cake: "Tarta de zanahoria", avatar: "LP" },
 ];
 
 function BirthdayCard() {
@@ -129,7 +129,7 @@ function BirthdayCard() {
         <div className="flex size-7 items-center justify-center rounded-lg bg-coral-100">
           <Calendar className="size-3.5 text-coral-600" />
         </div>
-        <span className="text-sm font-semibold text-foreground">Upcoming Birthdays</span>
+        <span className="text-sm font-semibold text-foreground">Próximos cumpleaños</span>
       </div>
       <div className="flex flex-col gap-2.5">
         {upcomingBirthdays.map((person, i) => (
@@ -171,11 +171,11 @@ function MonthStatsCard() {
         <div className="flex size-7 items-center justify-center rounded-lg bg-teal-100">
           <Gift className="size-3.5 text-teal-600" />
         </div>
-        <span className="text-sm font-semibold text-foreground">This Month</span>
+        <span className="text-sm font-semibold text-foreground">Este mes</span>
       </div>
       <div className="mb-2 flex items-baseline gap-1">
         <span className="text-2xl font-bold text-foreground">12</span>
-        <span className="text-xs text-muted-foreground">celebrations</span>
+        <span className="text-xs text-muted-foreground">celebraciones</span>
       </div>
       {/* Progress bar */}
       <div className="mb-1.5 h-2 w-full overflow-hidden rounded-full bg-muted">
@@ -186,17 +186,17 @@ function MonthStatsCard() {
           transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
         />
       </div>
-      <p className="text-[10px] text-muted-foreground">9 of 12 delivered</p>
+      <p className="text-[10px] text-muted-foreground">9 de 12 entregados</p>
 
       {/* Mini stat chips */}
       <div className="mt-3 flex gap-2">
         <div className="flex-1 rounded-lg bg-muted/50 px-2.5 py-1.5 text-center">
           <p className="text-lg font-bold text-foreground">98%</p>
-          <p className="text-[10px] text-muted-foreground">On time</p>
+          <p className="text-[10px] text-muted-foreground">A tiempo</p>
         </div>
         <div className="flex-1 rounded-lg bg-muted/50 px-2.5 py-1.5 text-center">
           <p className="text-lg font-bold text-foreground">4.9</p>
-          <p className="text-[10px] text-muted-foreground">Avg rating</p>
+          <p className="text-[10px] text-muted-foreground">Valoración</p>
         </div>
       </div>
     </motion.div>
@@ -221,9 +221,9 @@ function NotificationToast() {
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-xs font-medium text-foreground">
-            🎂 Sarah&apos;s birthday cake delivered!
+            🎂 ¡Tarta de cumpleaños de Sarah entregada!
           </p>
-          <p className="text-[10px] text-muted-foreground">Just now · Red Velvet cake</p>
+          <p className="text-[10px] text-muted-foreground">Ahora · Tarta Red Velvet</p>
         </div>
         <span className="flex size-2 shrink-0">
           <span className="absolute inline-flex size-2 animate-ping rounded-full bg-teal-400/60" />
@@ -310,8 +310,8 @@ function DashboardMockup() {
                 <span className="text-sm">🎂</span>
               </div>
               <div>
-                <p className="text-sm font-bold text-foreground">Koki Dashboard</p>
-                <p className="text-[10px] text-muted-foreground">Demo Company · April 2026</p>
+                <p className="text-sm font-bold text-foreground">Panel Koki</p>
+                <p className="text-[10px] text-muted-foreground">Empresa demo · April 2026</p>
               </div>
             </div>
             <div className="flex gap-1.5">
@@ -359,7 +359,7 @@ function ScrollIndicator() {
     <motion.div style={{ opacity }} className="mt-12 mb-8">
       <div className="flex flex-col items-center gap-2">
         <span className="text-xs font-medium tracking-wider text-muted-foreground/60 uppercase">
-          Scroll to explore
+          Descubre más
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
@@ -397,7 +397,7 @@ export function Hero() {
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary/60" />
             <span className="relative inline-flex size-2 rounded-full bg-primary" />
           </span>
-          Launching in Barcelona — Early access open
+          Lanzamiento en Barcelona — Acceso anticipado abierto
         </motion.div>
 
         {/* Headline — staggered word entrance */}
@@ -407,7 +407,7 @@ export function Hero() {
           variants={staggerContainer}
           className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          {["Make", "Every", "Birthday"].map((word, i) => (
+          {["Haz", "cada", "cumpleaños"].map((word, i) => (
             <motion.span
               key={word}
               variants={fadeInUp}
@@ -421,7 +421,7 @@ export function Hero() {
             variants={fadeInUp}
             className="inline-block bg-gradient-to-r from-coral-500 via-coral-400 to-coral-300 bg-clip-text text-transparent"
           >
-            Unforgettable
+            inolvidable
           </motion.span>
         </motion.h1>
 
@@ -432,9 +432,9 @@ export function Hero() {
           transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
         >
-          Koki handles the whole celebration — from tracking birthdays to
-          delivering the perfect cake. Your team feels valued, and you never
-          miss a date again.
+          Koki se encarga de toda la celebración — desde el seguimiento de
+          cumpleaños hasta la entrega de la tarta perfecta. Tu equipo se siente
+          valorado y nunca más olvidas una fecha.
         </motion.p>
 
         {/* CTAs — scale in with delay */}
@@ -460,7 +460,7 @@ export function Hero() {
               aria-hidden="true"
               className="absolute inset-0 -z-10 animate-pulse rounded-lg bg-primary/20 blur-xl"
             />
-            Get Early Access
+            Acceso anticipado
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </motion.a>
 
@@ -476,7 +476,7 @@ export function Hero() {
             whileTap={{ scale: 0.98 }}
           >
             <Play className="size-4 transition-transform group-hover:scale-110" />
-            See How it Works
+            Cómo funciona
             <ArrowRight className="size-3 -ml-1 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
           </motion.a>
         </motion.div>
