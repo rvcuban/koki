@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TrendingUp, Heart, Zap, Cake } from "lucide-react";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { staggerContainer, fadeInUp, iconHover } from "@/lib/animations";
 
 const STATS = [
   {
@@ -81,9 +81,12 @@ export function Stats() {
                   variants={fadeInUp}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="mb-3 flex size-12 items-center justify-center rounded-xl bg-coral-100/60 text-coral-600">
+                  <motion.div
+                    whileHover={iconHover}
+                    className="mb-3 flex size-12 items-center justify-center rounded-xl bg-coral-100/60 text-coral-600"
+                  >
                     <Icon className="size-6" />
-                  </div>
+                  </motion.div>
 
                   <p className="text-4xl font-bold tracking-tight sm:text-5xl">
                     {stat.target === 0 ? (

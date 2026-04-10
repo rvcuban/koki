@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { staggerContainer, scaleIn } from "@/lib/animations";
+import { staggerContainer, scaleIn, buttonHover, buttonTap, springTransition } from "@/lib/animations";
 
 interface PricingTier {
   name: string;
@@ -112,10 +112,12 @@ function PricingToggle({
           isAnnual ? "bg-primary" : "bg-muted"
         )}
       >
-        <span
+        <motion.span
+          layout
+          transition={springTransition}
           className={cn(
-            "pointer-events-none inline-block size-5 rounded-full bg-white shadow-lg ring-0 transition-transform duration-200 mt-0.5",
-            isAnnual ? "translate-x-5" : "translate-x-0.5"
+            "pointer-events-none inline-block size-5 rounded-full bg-white shadow-lg ring-0 mt-0.5",
+            isAnnual ? "ml-auto mr-0.5" : "ml-0.5"
           )}
         />
       </button>
@@ -128,12 +130,21 @@ function PricingToggle({
         Annual
       </span>
       {isAnnual && (
-        <Badge
-          variant="secondary"
-          className="bg-teal-100 text-teal-600 text-xs"
-        >
-          Save 20%
-        </Badge>
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={springTransition}
+          >
+            <Badge
+              variant="secondary"
+              className="bg-teal-100 text-teal-600 text-xs"
+            >
+              Save 20%
+            </Badge>
+          </motion.div>
+        </AnimatePresence>
       )}
     </div>
   );
@@ -213,8 +224,10 @@ function PricingCard({
       </CardContent>
 
       <CardFooter className="border-t-0 bg-transparent pt-0 pb-4 px-4">
-        <a
+        <motion.a
           href={tier.href}
+          whileHover={buttonHover}
+          whileTap={buttonTap}
           className={cn(
             buttonVariants({
               variant: tier.popular ? "default" : "outline",
@@ -225,7 +238,7 @@ function PricingCard({
           )}
         >
           {tier.cta}
-        </a>
+        </motion.a>
       </CardFooter>
     </Card>
   );

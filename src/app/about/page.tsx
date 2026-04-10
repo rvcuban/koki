@@ -133,7 +133,7 @@ export default function AboutPage() {
                   <motion.div key={member.name} variants={fadeInUp}>
                     <Card className="text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-warm-lg cursor-default">
                       <CardContent className="flex flex-col items-center gap-3 pt-6">
-                        <div className="flex size-20 items-center justify-center rounded-full bg-muted text-xl font-bold text-muted-foreground transition-colors duration-300 group-hover:bg-primary/10">
+                        <div className="flex size-20 items-center justify-center rounded-full bg-muted text-xl font-bold text-muted-foreground transition-colors duration-300 group-hover/card:bg-primary/10">
                           {member.initials}
                         </div>
                         <div>

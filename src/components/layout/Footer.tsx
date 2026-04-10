@@ -65,15 +65,17 @@ function SocialIcon({
   label: string;
 }) {
   return (
-    <a
+    <motion.a
       href={href}
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110"
+      className="text-muted-foreground transition-colors duration-300 hover:text-primary"
+      whileHover={{ scale: 1.15, rotate: 5 }}
+      whileTap={{ scale: 0.9 }}
     >
       {children}
-    </a>
+    </motion.a>
   );
 }
 

@@ -386,11 +386,11 @@ export function Features() {
             const Mockup = MOCKUP_MAP[title];
             return (
               <motion.div key={title} variants={fadeInUp} className={cn(span)}>
-                <Card className="group h-full transition-shadow duration-300 hover:shadow-lg">
+                <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <CardHeader>
                     <div
                       className={cn(
-                        "mb-2 inline-flex size-10 items-center justify-center rounded-lg",
+                        "mb-2 inline-flex size-10 items-center justify-center rounded-lg transition-transform duration-300 group-hover/card:scale-110",
                         accent
                       )}
                     >

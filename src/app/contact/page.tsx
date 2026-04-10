@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
@@ -14,8 +14,14 @@ const CONTACT_INFO = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@koki.com",
-    href: "mailto:hello@koki.com",
+    value: "ikelromerof@gmail.com",
+    href: "mailto:ikelromerof@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+34 663 931 266",
+    href: "tel:+34663931266",
   },
   {
     icon: MapPin,
@@ -34,12 +40,17 @@ export default function ContactPage() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitting(true);
-    // Simulate submission
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 1500);
+    const form = e.target as HTMLFormElement;
+    const name = (form.elements.namedItem("name") as HTMLInputElement)?.value || "";
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value || "";
+    const company = (form.elements.namedItem("company") as HTMLInputElement)?.value || "";
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+
+    const subject = encodeURIComponent(`Koki Contact: ${name} from ${company}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:ikelromerof@gmail.com?subject=${subject}&body=${body}`;
+
+    setSubmitted(true);
   }
 
   return (
@@ -79,10 +90,24 @@ export default function ContactPage() {
                           <CheckCircle className="size-8 text-green-600 dark:text-green-400" />
                         </div>
                         <h3 className="mt-4 text-xl font-semibold">
-                          Message sent!
+                          Opening your email client!
                         </h3>
                         <p className="mt-2 text-sm text-muted-foreground">
-                          We&apos;ll get back to you within 24 hours.
+                          Your message is ready to send. Didn&apos;t work?
+                          Email us directly at{" "}
+                          <a
+                            href="mailto:ikelromerof@gmail.com"
+                            className="text-primary hover:underline"
+                          >
+                            ikelromerof@gmail.com
+                          </a>{" "}
+                          or call{" "}
+                          <a
+                            href="tel:+34663931266"
+                            className="text-primary hover:underline"
+                          >
+                            +34 663 931 266
+                          </a>
                         </p>
                         <Button
                           variant="outline"
@@ -158,6 +183,7 @@ export default function ContactPage() {
                           />
                         </div>
 
+                        <motion.div whileTap={{ scale: 0.97 }}>
                         <Button
                           size="lg"
                           type="submit"
@@ -188,6 +214,7 @@ export default function ContactPage() {
                             </span>
                           )}
                         </Button>
+                        </motion.div>
                       </form>
                     )}
                   </CardContent>

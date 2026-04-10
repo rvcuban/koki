@@ -1,5 +1,19 @@
 import type { Variants } from "framer-motion"
 
+/* =============================================
+   Shared micro-interaction tokens
+   ============================================= */
+
+export const springTransition = { type: "spring" as const, stiffness: 300, damping: 20 }
+export const buttonHover = { scale: 1.04 }
+export const buttonTap = { scale: 0.97 }
+export const cardHover = { y: -4, transition: springTransition }
+export const iconHover = { scale: 1.15, rotate: 5, transition: springTransition }
+
+/* =============================================
+   Entrance animation variants
+   ============================================= */
+
 // Fade in from bottom
 export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },

@@ -95,7 +95,7 @@ export function HowItWorks() {
 
                   {/* Icon with gradient background */}
                   <div
-                    className={`mb-6 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br ${step.accent} shadow-warm transition-transform duration-300 group-hover:scale-110`}
+                    className={`mb-6 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br ${step.accent} shadow-warm transition-transform duration-300 group-hover/card:scale-110`}
                   >
                     <step.icon
                       className="size-7 text-white"

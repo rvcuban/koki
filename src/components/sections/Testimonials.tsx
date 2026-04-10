@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { staggerContainer, fadeInUp, buttonHover, buttonTap } from "@/lib/animations";
 import { Gift, MessageCircle, Tag } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -81,15 +81,17 @@ export function Testimonials() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <a
+          <motion.a
             href="#pricing"
+            whileHover={buttonHover}
+            whileTap={buttonTap}
             className={cn(
               buttonVariants({ size: "lg" }),
               "px-8 text-base font-semibold"
             )}
           >
             Apply for Early Access
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>

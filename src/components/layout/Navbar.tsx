@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { buttonHover, buttonTap } from "@/lib/animations";
 
 const NAV_LINKS = [
   { label: "How it Works", href: "#how-it-works" },
@@ -126,13 +127,15 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <a
+          <motion.a
             href="#pricing"
             onClick={(e) => handleNavClick(e, "#pricing")}
             className={cn(buttonVariants({ size: "lg" }))}
+            whileHover={buttonHover}
+            whileTap={buttonTap}
           >
             Get Early Access
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile menu */}
@@ -194,16 +197,18 @@ export function Navbar() {
                         delay: NAV_LINKS.length * 0.08,
                       }}
                     >
-                      <a
+                      <motion.a
                         href="#pricing"
                         onClick={(e) => {
                           handleNavClick(e, "#pricing");
                           setOpen(false);
                         }}
                         className={cn(buttonVariants({ size: "lg" }), "w-full")}
+                        whileHover={buttonHover}
+                        whileTap={buttonTap}
                       >
                         Get Early Access
-                      </a>
+                      </motion.a>
                     </motion.div>
                   </motion.div>
                 )}

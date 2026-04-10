@@ -16,7 +16,7 @@ const LOGOS = [
 
 function LogoPlaceholder({ name }: { name: string }) {
   return (
-    <div className="flex h-12 shrink-0 items-center justify-center px-8 transition-all duration-300 grayscale hover:grayscale-0">
+    <div className="flex h-12 shrink-0 items-center justify-center px-8 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-105">
       <span className="text-xl font-bold tracking-tight text-muted-foreground/40 select-none whitespace-nowrap transition-colors duration-300 hover:text-foreground/70">
         {name}
       </span>

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, Play, ChevronDown, Gift, Calendar, Bell } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -235,6 +235,48 @@ function NotificationToast() {
 }
 
 /* ============================================================
+   Tilt Container — Mouse-tracked 3D perspective
+   ============================================================ */
+
+function TiltContainer({ children }: { children: React.ReactNode }) {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [5, -5]), {
+    stiffness: 150,
+    damping: 20,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-5, 5]), {
+    stiffness: 150,
+    damping: 20,
+  });
+
+  function handleMouseMove(e: React.MouseEvent) {
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  }
+
+  function handleMouseLeave() {
+    mouseX.set(0);
+    mouseY.set(0);
+  }
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1200 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ============================================================
    Dashboard Mockup — Assembled
    ============================================================ */
 
@@ -447,7 +489,9 @@ export function Hero() {
         transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
         className="mx-auto mt-16 w-full max-w-5xl"
       >
-        <DashboardMockup />
+        <TiltContainer>
+          <DashboardMockup />
+        </TiltContainer>
       </motion.div>
 
       {/* Scroll indicator — fades out on scroll */}

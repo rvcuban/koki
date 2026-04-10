@@ -5,6 +5,7 @@ import { ShieldCheck, Zap, MapPin } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
+import { buttonHover, buttonTap } from "@/lib/animations";
 
 function FloatingParticle({
   delay,
@@ -105,15 +106,17 @@ export function CallToAction() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
               >
-                <a
+                <motion.a
                   href="#pricing"
                   className={cn(
                     buttonVariants({ size: "lg" }),
                     "group relative bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-8 text-base font-semibold transition-shadow duration-300 hover:shadow-[0_0_24px_rgba(255,255,255,0.3)]"
                   )}
+                  whileHover={buttonHover}
+                  whileTap={buttonTap}
                 >
                   Get Early Access — It&apos;s Free
-                </a>
+                </motion.a>
               </motion.div>
 
               {/* Trust badges */}
