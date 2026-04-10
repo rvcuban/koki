@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
@@ -18,15 +18,9 @@ const CONTACT_INFO = [
     href: "mailto:hello@koki.com",
   },
   {
-    icon: Phone,
-    label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
-  },
-  {
     icon: MapPin,
-    label: "Office",
-    value: "123 Celebration St, San Francisco, CA 94105",
+    label: "Location",
+    value: "Barcelona, Spain",
     href: "#",
   },
 ] as const;
@@ -226,7 +220,7 @@ export default function ContactPage() {
                   <div className="mt-4 rounded-xl border bg-muted/50 p-6">
                     <p className="text-sm font-medium">Office Hours</p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Monday — Friday: 9:00 AM – 6:00 PM PST
+                      Monday — Friday: 9:00 – 18:00 CET
                     </p>
                     <p className="text-sm text-muted-foreground">
                       Saturday — Sunday: Closed

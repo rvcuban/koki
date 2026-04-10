@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 const LOGOS = [
-  "TechFlow",
-  "Bright Studio",
-  "Growthly",
-  "Acme Corp",
-  "Nova Labs",
-  "Zenith AI",
-  "Pulse Health",
-  "Stratos",
+  "BambooHR",
+  "Personio",
+  "Factorial",
+  "Slack",
+  "Google Workspace",
+  "Microsoft Teams",
+  "Workday",
+  "HiBob",
 ] as const;
 
 function LogoPlaceholder({ name }: { name: string }) {
@@ -30,7 +30,7 @@ export function ClientLogos() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <p className="text-center text-sm font-medium text-muted-foreground">
-            Trusted by 300+ companies worldwide
+            Built to connect with the tools you already use
           </p>
         </AnimatedSection>
 

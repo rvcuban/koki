@@ -11,7 +11,7 @@ const STEPS = [
     number: "01",
     title: "Connect Your Team",
     description:
-      "Upload your employee list via CSV or sync directly with your HR system. We integrate with 80+ platforms.",
+      "Upload your employee list via CSV or connect your HR platform. We're building integrations with the most popular tools in Europe.",
     icon: Users,
     accent: "from-coral-400 to-coral-500",
     accentBg: "bg-coral-50",

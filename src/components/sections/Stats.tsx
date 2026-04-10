@@ -1,36 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, TrendingUp, Cake, Star } from "lucide-react";
+import { TrendingUp, Heart, Zap, Cake } from "lucide-react";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 const STATS = [
   {
-    target: 300,
-    suffix: "+",
-    label: "Companies",
-    icon: Building2,
-  },
-  {
-    target: 100,
+    target: 70,
     suffix: "%",
-    label: "Retention",
+    label: "of employees say recognition boosts morale",
     icon: TrendingUp,
   },
   {
-    target: 10000,
-    suffix: "+",
-    label: "Cakes Delivered",
-    icon: Cake,
+    target: 2,
+    suffix: "x",
+    label: "more likely to stay when valued",
+    icon: Heart,
   },
   {
-    target: 4.9,
-    suffix: "/5",
-    label: "Satisfaction",
-    decimals: 1,
-    icon: Star,
+    target: 10,
+    suffix: "min",
+    label: "to set up — then it runs itself",
+    icon: Zap,
+  },
+  {
+    target: 0,
+    suffix: "",
+    label: "birthdays forgotten",
+    icon: Cake,
   },
 ] as const;
 
@@ -56,6 +55,17 @@ export function Stats() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold tracking-wider text-primary uppercase">
+              Why it matters
+            </p>
+            <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+              Celebrations drive culture
+            </h2>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection>
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -76,11 +86,15 @@ export function Stats() {
                   </div>
 
                   <p className="text-4xl font-bold tracking-tight sm:text-5xl">
-                    <AnimatedCounter
-                      target={stat.target}
-                      suffix={stat.suffix}
-                      decimals={"decimals" in stat ? stat.decimals : 0}
-                    />
+                    {stat.target === 0 ? (
+                      <span>0</span>
+                    ) : (
+                      <AnimatedCounter
+                        target={stat.target}
+                        suffix={stat.suffix}
+                        decimals={0}
+                      />
+                    )}
                   </p>
 
                   <p className="mt-2 text-sm font-medium text-muted-foreground">
@@ -90,6 +104,12 @@ export function Stats() {
               );
             })}
           </motion.div>
+
+          {/* Sources footnote */}
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-muted-foreground/60">
+            Sources: Gallup State of the Global Workplace Report; Deloitte
+            Talent 2020
+          </p>
         </AnimatedSection>
       </div>
     </section>

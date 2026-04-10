@@ -300,7 +300,7 @@ const FEATURES = [
     icon: Users,
     title: "Smart Employee Management",
     description:
-      "Bulk upload employee data via CSV or sync directly with your HR system. We integrate with 80+ platforms including BambooHR, Gusto, and Workday.",
+      "Bulk upload employee data via CSV or connect directly with your HR platform. We're actively building integrations with tools like Personio, Factorial, and BambooHR — with more on the way.",
     accent: "bg-coral-100 text-coral-600",
     span: "md:col-span-2",
   },

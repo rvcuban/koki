@@ -32,8 +32,8 @@ interface PricingTier {
 const TIERS: PricingTier[] = [
   {
     name: "Starter",
-    monthlyPrice: "$8",
-    annualPrice: "$6.40",
+    monthlyPrice: "€5",
+    annualPrice: "€4",
     period: "/cake",
     description:
       "Perfect for small teams getting started with automated celebrations.",
@@ -44,13 +44,13 @@ const TIERS: PricingTier[] = [
       "Standard cake selection",
       "Birthday calendar dashboard",
     ],
-    cta: "Get Started",
-    href: "#pricing",
+    cta: "Join the Waitlist",
+    href: "#contact",
   },
   {
     name: "Business",
-    monthlyPrice: "$6",
-    annualPrice: "$4.80",
+    monthlyPrice: "€7",
+    annualPrice: "€5.50",
     period: "/cake",
     description:
       "Full automation for growing companies that care about their people.",
@@ -62,8 +62,8 @@ const TIERS: PricingTier[] = [
       "Priority support",
       "Custom delivery scheduling",
     ],
-    cta: "Start Free Trial",
-    href: "#pricing",
+    cta: "Request Early Access",
+    href: "#contact",
     popular: true,
   },
   {
@@ -71,7 +71,7 @@ const TIERS: PricingTier[] = [
     monthlyPrice: "Custom",
     annualPrice: "Custom",
     description:
-      "Tailored solutions for organizations with unique celebration needs.",
+      "Tailored solutions for organisations with unique celebration needs.",
     features: [
       "Unlimited employees",
       "Custom bakery partnerships",
@@ -80,8 +80,8 @@ const TIERS: PricingTier[] = [
       "Custom branding",
       "SLA guarantee",
     ],
-    cta: "Contact Sales",
-    href: "#contact",
+    cta: "Talk to Us",
+    href: "/contact",
   },
 ];
 
@@ -240,11 +240,11 @@ export function Pricing() {
         <AnimatedSection>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-              Simple, transparent pricing
+              Early access pricing
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              No hidden fees. No long-term contracts. Just delicious cakes
-              delivered on the right day.
+              Simple per-cake pricing — you only pay when we deliver. Founding
+              companies lock in early-access rates.
             </p>
           </div>
         </AnimatedSection>
@@ -271,8 +271,8 @@ export function Pricing() {
         </motion.div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground">
-          All plans include free setup and a 14-day money-back guarantee. No
-          credit card required to start.
+          All plans include personal onboarding. Early adopters get
+          founding-member pricing locked in for 12 months.
         </p>
       </div>
     </section>

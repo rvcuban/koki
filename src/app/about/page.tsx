@@ -33,6 +33,7 @@ const VALUES = [
   },
 ] as const;
 
+// TODO: Replace with real team member names and photos
 const TEAM = [
   {
     name: "Sofia Martinez",
@@ -102,9 +103,10 @@ export default function AboutPage() {
                     calendar reminders. No one left out.
                   </p>
                   <p>
-                    Today, over 300 companies trust Koki to handle their
-                    celebrations. Because when people feel appreciated, they do
-                    their best work.
+                    We&apos;re just getting started — launching in Barcelona and
+                    working with our first teams to build something that makes
+                    every workplace a little warmer. Because when people feel
+                    appreciated, they do their best work.
                   </p>
                 </div>
               </div>

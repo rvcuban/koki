@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Zap, CalendarX2 } from "lucide-react";
+import { ShieldCheck, Zap, MapPin } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -49,8 +49,8 @@ const PARTICLES = [
 
 const TRUST_BADGES = [
   { icon: ShieldCheck, text: "No credit card required" },
-  { icon: Zap, text: "Free setup" },
-  { icon: CalendarX2, text: "Cancel anytime" },
+  { icon: Zap, text: "Set up in minutes" },
+  { icon: MapPin, text: "Made in Barcelona" },
 ];
 
 export function CallToAction() {
@@ -80,9 +80,9 @@ export function CallToAction() {
                 transition={{ duration: 0.6 }}
                 className="font-heading text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl"
               >
-                Ready to make every birthday{" "}
+                Ready to never forget a birthday{" "}
                 <span className="bg-gradient-to-r from-vanilla-200 to-vanilla-400 bg-clip-text text-transparent">
-                  special
+                  again
                 </span>
                 ?
               </motion.h2>
@@ -94,8 +94,8 @@ export function CallToAction() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80"
               >
-                Join 300+ companies that never miss a celebration. Set it up
-                once, and Koki handles the rest.
+                Be among the first teams in Barcelona to automate
+                celebrations. Set it up once — Koki handles the rest.
               </motion.p>
 
               <motion.div
@@ -112,7 +112,7 @@ export function CallToAction() {
                     "group relative bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-8 text-base font-semibold transition-shadow duration-300 hover:shadow-[0_0_24px_rgba(255,255,255,0.3)]"
                   )}
                 >
-                  Start Celebrating — Free Setup
+                  Get Early Access — It&apos;s Free
                 </a>
               </motion.div>
 

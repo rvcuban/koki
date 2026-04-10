@@ -269,7 +269,7 @@ function DashboardMockup() {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground">Koki Dashboard</p>
-                <p className="text-[10px] text-muted-foreground">Acme Corp · April 2026</p>
+                <p className="text-[10px] text-muted-foreground">Demo Company · April 2026</p>
               </div>
             </div>
             <div className="flex gap-1.5">
@@ -355,7 +355,7 @@ export function Hero() {
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary/60" />
             <span className="relative inline-flex size-2 rounded-full bg-primary" />
           </span>
-          Automate birthday celebrations for your team
+          Launching in Barcelona — Early access open
         </motion.div>
 
         {/* Headline — staggered word entrance */}
@@ -418,7 +418,7 @@ export function Hero() {
               aria-hidden="true"
               className="absolute inset-0 -z-10 animate-pulse rounded-lg bg-primary/20 blur-xl"
             />
-            Begin the Celebration
+            Get Early Access
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </motion.a>
 

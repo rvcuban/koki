@@ -131,7 +131,7 @@ export function Navbar() {
             onClick={(e) => handleNavClick(e, "#pricing")}
             className={cn(buttonVariants({ size: "lg" }))}
           >
-            Start Celebrating
+            Get Early Access
           </a>
         </div>
 
@@ -202,7 +202,7 @@ export function Navbar() {
                         }}
                         className={cn(buttonVariants({ size: "lg" }), "w-full")}
                       >
-                        Start Celebrating
+                        Get Early Access
                       </a>
                     </motion.div>
                   </motion.div>
